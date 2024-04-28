@@ -1,0 +1,122 @@
+.container {
+    width: 100%; /* Chiều rộng container */
+    margin-right: auto; /* Canh trái phải tự động */
+    margin-left: auto; /* Canh trái phải tự động */
+    padding-right: 15px; /* Padding phải */
+    padding-left: 15px; /* Padding trái */
+  }
+
+.custom{
+    max-width: 100%;
+    max-height: 100%;
+    background-image:url(https://programmics.net/wp-content/uploads/2019/08/bg_01.jpg?id=44)  ;
+    // background-repeat: no-repeat;
+    &_wrap{
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+        padding: 100px 100px;
+    }
+    &_contentItem{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    &_card{
+        width: 270px;
+        margin: 0 15px 60px 0;
+        max-width: 100%;
+        max-height: 100%;
+
+    }
+    &_icon{
+        background-color: #0150ec;
+        width: 90px;
+        height: 90px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        position: relative;
+        &>svg{
+            width:61px ;
+            height: 61px;
+        }
+        &>span{
+            color: white;
+            background-color: #3b7eff;
+            position: absolute;
+            padding: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50px;
+            text-align: center;
+            top: 68px;
+            right: -10px;
+            &>svg{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+            }
+        }
+    }
+    &_text{
+        margin-top: 45px;
+        &>h3{
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            line-height: 1.4em;
+        }
+        &>p{
+            margin-top: 11px;
+            color: #9a9cab;
+
+        }
+    }
+    &_line{
+        // width: 100%;
+        border: 1px solid #424462;
+        margin: 40px;
+    }
+    &_button{
+        display: flex;
+        justify-content: center;
+    }
+    &_btn{
+        &>a{ 
+            &>span{
+                padding:  14px;
+                background-color: white;
+                border-radius: 10px;
+                display: flex;
+                color: black;
+                font-size: 16px;
+                font-weight: 400;
+                align-items: center;
+                &>svg{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1114px){
+    .custom_wrap {
+        padding: 100px 0 !important;
+    }
+    .Testnimonial__topTest{
+        padding: 0 15px;
+    }
+    .containerheight {
+        // padding: 103 159px 84px 159px !important;
+    }
+    .Blog__Blogwrap {
+        margin-top: 0 !important;
+      }
+}

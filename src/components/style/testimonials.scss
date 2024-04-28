@@ -1,0 +1,111 @@
+.fluid-container{
+    padding: 74px 0 100px 0 ;
+}
+.containerTesti{
+    // padding: 300px;
+    max-width: 100%;
+}
+@media screen and (max-width:1000px){
+    .Testnimonial{
+        &>p{
+            width: 330px !important;
+        }
+        &__deviderTest{
+            position: absolute;
+            width: 41px !important;
+            height: 4px !important;
+            border-radius: 2px;
+            background-color: #3b7eff;
+            // transform: translateX(-127px) translateY(53px) !important;
+        }
+    }
+    // .testimonials__columnTest{
+    //     height: 760px;
+    // }
+}
+.Testnimonial{
+    &__icon{
+        width: 73px;
+        height: 73px;
+        background-color: #eef3f9;
+        color: #3B7EFF;
+        border-radius: 10px; 
+        position: relative;
+        display: flex; /* Sử dụng flexbox để canh giữa */
+        justify-content: center; /* Canh giữa theo chiều ngang */
+        align-items: center; /* Canh giữa theo chiều dọc */
+        margin: 22px;
+        &>svg{
+            position: absolute;
+            width: 30px;
+            height: 41px;
+            
+        }
+    }
+    &__textTest{
+        padding-bottom: 9px;
+        position: relative;
+        font-size: 36px;
+        line-height: 1.3em;
+        margin-bottom: 10px;
+        font-weight: 700;
+        
+        &>h3{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    }
+    &__deviderTest{
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        border-radius: 2px;
+        background-color: #3b7eff;
+        transform: translateX(-243px) translateY(53px);
+        
+    }
+    &__topTest{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &__contentTest{
+        text-align: center;
+        font-size: 15px;
+        line-height: 27px;
+        font-weight: 400;
+    }
+}
+.testimonials{
+    width: 349px;
+    height: 760px   ;
+    &__columnTest{
+        background-color: #eef3f9;
+        border-radius: 10px;
+        position: relative;
+        padding: 60px 35px 60px 90px;
+        width: 349px;
+        height: 700px;
+        margin: 0 15px 30px 15px;
+    }
+    &__imgTest{
+        position: absolute;
+        transform: translateX(-90px) translateY(-59px);
+        &>img{
+            width: 60px;
+            height: 60px;
+            border-radius: 7px 0 7px 0;
+        }
+    }
+    &__wrappertest{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+.testimonials__wrappertest {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

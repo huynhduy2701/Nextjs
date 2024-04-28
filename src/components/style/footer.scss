@@ -1,0 +1,20 @@
+@media screen and (min-width: 768px) and (max-width: 1114px) {
+    .wrapper{
+        padding: 0 !important;
+    }
+    .content{
+        width: 100% !important;
+        flex-wrap: wrap;
+    }
+    .content__right{
+        width: 100%;
+    }
+    .formInput{
+        &>input{
+            width: 100%;
+        }
+    }
+    .wrapper__bottom{
+        padding-bottom: 50px;
+    }
+}

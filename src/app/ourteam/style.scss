@@ -1,0 +1,110 @@
+.container{
+    max-width: 100%;
+}
+.blog{
+        width: 100%;
+        margin: auto;
+        padding: 0 40px;
+    
+    &_card{
+        width: 270px;
+        border-radius: 10px;
+        height: 389px;
+        background-color: aliceblue;
+        margin: 20px 20px 0  0;
+    }
+    &_img{
+        &>img{
+            border-radius: 10px 10px 0 0;
+        }
+    }
+    &_nameTitle{
+        text-align: center;
+
+    }
+    &_name{
+        margin-top: 20px;
+        &>h5{
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+    &_description{
+        color: #929292;
+        
+    }
+    &_wrap{
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        padding-bottom: 100px;
+        justify-content: center;
+    }
+}
+.banner{
+    width: 100%;
+    background-image: url(https://programmics.net/wp-content/uploads/2019/08/bg_04.jpg?id=108);
+    &_wrap{
+        // margin: auto;
+        display: flex;
+        justify-content: space-around;
+        padding: 50px 0;
+        flex-wrap: wrap;
+    }
+    &_icon{
+        margin-right: 27px;
+        &>svg{
+            width: 41px;
+            height: 56px;
+            color: blue;
+        }
+    }
+    &_left{
+        display: flex ;
+    }
+    &_text{
+        &>h3{
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.4em;
+        }
+    }
+    &_right{
+        display: flex;
+        align-items: center;
+        background-color: #3b7eff;
+        color: white;
+        border-radius: 10px;
+        width: 177px;
+    }
+    &_button{
+        padding: 15px;
+        margin: auto;
+        &>a{
+            display: flex;
+            display: flex ;
+            align-items: center;
+            &>svg{
+             
+                margin-left: 10px;
+            }
+        }
+    }
+}
+@media screen and (min-width:320px) and (max-width:430px){
+    .banner_left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .banner_right {
+        margin-top: 20px;
+    }
+    .banner{
+        background-image: none;
+        background-color: #eef3f9;
+    }
+}

@@ -1,0 +1,486 @@
+.container {
+    width: 100%; /* Chiều rộng container sẽ tự điều chỉnh để vừa với nội dung */
+    max-width: 1200px; /* Đặt chiều rộng tối đa của container */
+    margin-left: auto; /* Căn lề trái tự động */
+    margin-right: auto; /* Căn lề phải tự động */
+    padding-left: 15px; /* Thêm padding bên trái */
+    padding-right: 15px; /* Thêm padding bên phải */
+}
+.banner{
+    width: 100%;
+    background-color: #2c2f50;
+    &__icon{
+        background-color: #3b7eff;
+        padding: 15px;
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        &>svg{
+            width: 30px;
+            height: 30px;
+            color: white;
+        }
+    }
+    &__title{
+        margin-top: 23px;
+        &>h3{
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        &>p{
+            margin-top: 9px;
+            color: #cacad3;
+        }
+    }
+    &__column{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    &__card{
+        width: 270px;
+        padding: 0 15px;
+    }
+    &__wrap{
+        padding: 100px 0 230px 0;
+    }
+}
+.product{
+    background-color: #ffffff;
+    max-width: 100%;
+    max-height: 100%;
+    // height: 2000px;
+    &__wrap{
+        height: 100%;
+        // position: relative;
+    }
+    &__contentBox{
+        background-color: white;
+        // position: absolute;
+        border-radius: 10px;
+        box-shadow: 4px 19px 20px 10px RGB(211, 211, 211);
+        display: flex;
+        height: 100%;
+        top: -149px;
+        left: 0;
+    }
+    &__infoProduct{
+        padding: 80px 50px 60px;
+    }
+    &__imgProduct {
+        width: 100%;
+        min-height: 100%; // Đặt kích thước cho phần tử chứa background-image
+        background-image: url('https://programmics.net/wp-content/uploads/2019/09/img_10.jpg?id=349');
+        background-size: cover; // Chỉnh kích thước của background-image
+        background-position: center; // Đặt vị trí của background-image
+        border-radius: 0 10px 10px 0; // Đường viền cong cho phần tử chứa background-image
+    }
+    &__infoProduct{
+        &>a{
+            margin-top: 35px;
+            background-color: #3b7eff;
+            border-radius: 10px;
+            min-height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            &>span{
+                padding: 0 25px;
+                font-size: 15px;
+                font-weight: 600;
+                color: white;
+                
+            }
+        }
+       &>h3{
+        font-size: 36px;
+        line-height: 1.4em;
+        font-weight: 700;
+        margin-bottom: 10px;
+       }
+    }
+    &__contentProduct{
+        &>h3{
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        &>p{
+            font-size: 15px;
+            line-height: 27px;
+            font-weight: 400;
+            color:#404040 ;
+            margin-bottom: 1.7em;
+        }
+        
+    }
+    &__columnChartInfo{
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 9px;
+
+    }
+    &__line{
+        width: 100%;
+        height: 3px;
+        background-color: #F0F1F2;
+        position: relative;
+    }
+    &__lineChart{
+        position: absolute;
+        width: 76%;
+        background-color: blue;
+        height: 3px;
+        &>span{
+            position: absolute;
+            right: -15px;
+            bottom: calc(100% + 8px);
+            color: blue;
+        }
+    }
+    &--second{
+        padding: 50px 0;
+    }
+    &--lineSecond{
+        width: 55% !important;
+    }
+    &--third{
+        width: 35% !important;
+    }
+    &__columnInfo{
+        // position: absolute;
+        padding: 100px 0;
+        display: flex;
+    }
+    &__contentProduct{
+        margin-bottom: 18px;
+        &>h3{
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.4em;
+        }
+        &>a{
+            margin-top: 35px;
+            background-color:#eef3f9 ;
+            display: inline-flex;
+            min-height: 50px;
+            align-items: center;
+            border-radius: 10px;
+
+            &>span{
+                padding: 0 25px ;
+                font-weight: 400;
+                font-size: 16px;
+            }
+        }
+    }
+    &__desc{
+        &>a{
+            font-size: 15px;
+            font-weight: 400;
+            color: #5e5e5e;
+           
+
+        }
+    }
+    &__leftInfo{
+        width: 100%;
+        padding: 0 15px;
+    }
+    &__rightInfo{
+        width: 100%;
+        padding: 0 15px;
+    }
+    &__textBox{
+        padding: 0 15px 0 60px;
+    }
+}
+.business{
+    background-color:#eef3f9 ;
+    max-width: 100%;
+    min-height: 100%;
+    &__Img{
+        background-image: url(https://programmics.net/wp-content/uploads/2019/09/img_03-1.jpg);
+        min-height: 100%;
+        width: 951px;
+        background-size: cover; // Chỉnh kích thước của background-image
+        background-position: start; // Đặt vị trí của background-image
+
+    }
+    &__wrapBusiness{
+        width: 100%;
+        display: flex;
+    }
+    &__boxText{
+        padding: 0 15px 75px;
+        width: 600px;
+        &>h3{
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.4em;
+            // position: relative;
+        }
+        &>span{
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: blue;
+        }
+    }
+    &__desc{
+        &>p{
+            font-size: 15px;
+            line-height: 27px;
+        }
+    }
+}
+.containerBusiness{
+    // padding: 120px 0;
+    padding-top: 120px;
+}
+.Statistical{
+    border-bottom: 1px solid grey;
+    &__numberHead{
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 1.4em;
+    }
+    &>p{
+        color: #4c4c4d;
+        margin-top: 10px;
+    }
+    &__card{
+        width: 270px;
+    }
+    &__wrap{
+        padding: 40px 0;
+    }
+    &__column{
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+}
+// .container{
+//     width: 100%;
+//     margin-right: auto;
+//     margin-left: auto;
+//     padding-right: 15px;
+//     padding-left: 15px;
+
+// }
+.box{
+   background-image: url(https://programmics.net/wp-content/uploads/2019/09/bg_b.png?id=1317);
+}
+.fluid{
+    padding-bottom:  84px ;
+
+}
+// .boxCard__text{
+//     margin-top: 17px;
+//     &>p{
+//         text-align: center;
+//         &>a{
+//             color: #6297ff;
+//         }
+//     }
+// }
+.contentBox{
+    margin-top: 103px;
+    &__icon{
+        background-color:#eef3f9 ;
+        width: 74px;
+        height: 74px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin: auto;
+        & >svg{
+            width: 31px;
+            height: 43px;
+            color: #3b7eff;
+        }
+    }
+    &__Text{
+        text-align: center;
+       & > h3{
+        padding-bottom: 9px;
+        margin-bottom: 10px;
+        font-size: 36px;
+        line-height: 1.4em;
+        font-weight: 700;
+        position: relative;
+       }
+
+    }
+    &__linebottom{
+        background-color:#3B7EFF ;
+        height: 3px;
+        width: 30px;
+        border-radius: 2px;
+        position: absolute;
+        left:50%;
+        transform: translateX(-15px) translateY(50px);
+        &>div>p{
+            color: #989898;
+            padding-bottom: 25.5px;
+        }
+    }
+}
+.boxCard{
+    margin-top: 86px;
+}
+// @media screen and (min-width:320px) and (max-width:767px){
+//     .contentBox__icon{
+//         margin-bottom: 22px;
+//     }
+// }
+// @media screen and  (max-width: 1000px){
+//     .card{
+//         &__button{
+//             margin-top: 30px;
+//             margin-bottom: 30px;
+//             &>a{
+//                 width: 259px !important;
+//             }
+//         }
+//         &__box{
+//             margin-bottom: 30px !important;
+//         }
+//     }
+//     // .card{
+//     //     &__logoMini{
+           
+//     //         transform: translateX(108px) translateY(-50px) !important;
+        
+//     //     }
+//     // }
+// }
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &__header{
+        position: relative;
+        & > a >img{
+            width: 369px;
+            height: 207px;
+            border-radius: 7px 7px 0 0;
+        }
+    }
+    &__logoMini{
+        width: 76px;
+        position: absolute;
+        padding: 15px 0 0 0;
+        background-color: #fff;
+        border-top-right-radius: 7px;
+        border-top-left-radius: 7px;
+        transform: translateX(140px) translateY(-50px);
+        & >img{
+            width: 31px;
+            height: 35px;
+            margin: auto;
+        }
+    }
+    &__box{
+        width: 369px;
+        background-color: #fff;
+        border: 1px solid;
+        border-radius: 7px;
+        // padding: 10px;
+        box-shadow: 2px 2px 2px 2px #888888;
+        margin: 0 15px;
+    }
+    &__body{
+        position: relative;
+        margin-bottom: 20px;
+        &::before{
+            content: "";
+            width: 30px;
+            height: 3px;
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        text-align: center;
+        &>a>h5{
+            margin-top: 26px;
+            font-size: 20px;
+            font-weight: 600;
+            // text-align: center;
+        }
+    }
+    &__content{
+        position: relative;
+        &::before{
+            content: '';
+            width: 30px;
+            height: 3px;
+            border-radius: 3px;
+            background-color: #dadce2;
+            position: absolute;
+            top: 0;
+            left: calc(50% - 24px);
+        }
+        margin-top: 13px;
+        padding-top: 14px;
+    }
+    &__button{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        &>a{
+            padding: 0 20px;
+            width: 229px;
+            height: 50px;
+            border: 1px solid #dadce2;;
+            width: 299px;
+            display: inline-flex;
+            text-align: center;
+            border-radius: 7px;
+            min-height: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Thêm dòng này */
+            &:hover{
+                background-color: blue;
+                color: #fff;
+                & > span {
+                    padding-right: 40px; /* Giả sử bạn muốn thay đổi padding-right */
+                    transition: padding 0.3s ease;
+                }
+                & > span::after {
+                    opacity: 1;
+                    right: -10px; /* Điều chỉnh khoảng cách mũi tên chạy */
+                }
+            }
+            & > span {
+                position: relative;
+                transition: padding 0.3s ease;
+                &::after {
+                    content: '\2192'; /* Mã Unicode của mũi tên */
+                    position: absolute;
+                    opacity: 0;
+                    right: 6px;
+                    transition: right 0.3s ease, opacity 0.15s ease;
+                }
+            }
+          
+        }
+    }
+}
+.caseStudy__text{
+    text-align: center;
+    margin-top: 50px;
+    &>p{
+        &>a{
+            color: blue;
+        }
+    }
+}

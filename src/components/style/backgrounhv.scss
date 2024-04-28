@@ -1,0 +1,43 @@
+.background_no_hover{
+    border-top: 1px solid black;
+}
+.container{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+.wrapImage{
+    padding: 52px 0 44px 0;
+}
+.wrapCoLumn{
+    ::before{
+        content: "";
+        display: table;
+    }
+    ::after{
+        content: "";
+        display: table;
+    }
+    &__mainImg{
+        position: relative;
+    }
+    &__hover{
+        position: absolute;
+        overflow: hidden;
+        // transform:translateY(calc(-100% - 20px)) ;
+        // transition:all 0.3s ease ;
+    }
+    &__Img{
+        position: relative;
+        &:hover{
+            
+            transform:translateY(calc(100% + 20px)) ;
+            transition:all 0.3s ease ;
+            overflow: hidden;
+            
+        }
+    }
+}

@@ -1,0 +1,257 @@
+// .SoftwareProducts{
+//    width: 100%;
+//    height: 100%;
+
+
+// }
+// .SoftwareProductsContainer{
+//     max-width: 100%;
+    
+// }
+// .Software{
+//     display: flex;
+//     flex-wrap: wrap;
+//     &__imgSF>img {
+//       width: 379px;
+//       height: 1074px;
+//     }
+//     // &__imgSFr{
+//     //     width: px;
+//     //     height: 1074px;
+//     // }
+//     &__iconSF{
+//     display: flex;
+//     justify-content: center;
+
+//         &>svg{
+//             width: 41px;
+//             height: 56px;
+//             color: blue;
+//         }
+//     }
+//     &__textBoxSF{
+
+//         width: 388px;
+//         height: 1074px;
+//         padding: 0 15px;
+//         background-color: #eef3f9 !important;
+//     }
+//     &__boxTextsf{
+//         position: relative;
+//     }
+//     &__wrapperSF{
+
+//         padding: 110px 70px 100px 70px;
+//     }
+//     &__infoSF{
+//         &>h3{
+//             font-size: 24px;
+//             font-weight: 700;
+//             text-align: center;
+//             margin-bottom: 18px;
+//         }
+//     }
+//     &__pagam{
+//         & > p {
+//             font-size: 14px;
+//             color: rgba(0,0,0,0.75);
+//             text-align: center;
+//         }
+//     }
+//     &__textsorf{
+//         &>h3{
+//             color: white;
+//             font-size: 24px;
+//             font-weight: 700;
+//             line-height: 1.4em;
+//             text-align: center;
+//             margin-bottom: 18px;
+//         }
+//     }
+  
+// }
+// .Software__textSfWrap{
+//     font-size: 15px;
+//     color: white;
+//     line-height: 27px;
+//     &>p{
+//         text-align: center;
+//     }
+// }
+// .wrapTextSf{
+//     position: absolute;
+//     z-index: 99;
+//     // transform: translateX(11px) translateY(-901px);
+//     width: 229px;
+//   justify-content: center;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   top: 50%; /* Đặt phần tử ở giữa theo trục Y */
+//   left: 50%; /* Đặt phần tử ở giữa theo trục X */
+//   transform: translate(-50%, -129%); /* Dịch chuyển phần tử điều chỉnh để giữ nó chính giữa */
+// }
+// .software__pagam > p{
+//     text-align: center;
+//     font-size: 15px;
+// }
+.btnSF{
+    margin-top: 35px;
+    display: inline-block;
+    padding: 0 25px;
+    background-color: #0154f7;
+    width: 156px;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    &:hover{
+      &>span{
+        padding-left: 10px;
+        transition: padding 0.3s ease;
+      }
+      &>span::after{
+        content: "";
+        opacity: 1;
+       
+      }
+    }
+    &>span{
+        padding-right: 54px;
+        font-size: 15px;
+        font-weight: 600;
+        width: 160px;
+        &::after{
+            content: '\2192';
+            padding-left: 12px;
+        }
+    }
+}
+// .iconpig{
+//     color: white;
+//     width: 50px;
+//     height: 50px;
+//     background-color: blue;
+//     border-radius: 50px;
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//    &>svg{
+//     width: 21px;
+//     height: 28px;
+//     position: absolute;
+//    }
+// }
+
+// // @media screen and (max-width:1000px){
+// //     .Software{
+
+// //         &__wrapperSF{
+// //             padding: 110px 0 100px 0 !important;
+// //         }
+// //         &__textBoxSF{
+// //             height: 786px !important;
+// //         }
+// //     }
+// //     .btnSF{
+// //         margin: auto !important;
+        
+// //     }
+// //     .software__pagam > p{
+// //         margin-bottom: 50px !important;
+// //     }
+// //     .imgMobieSf > img{
+// //         width: 375px !important;
+// //         height: 360px !important;
+// //     }
+// //     .wrapTextSf{
+// //         position: absolute;
+// //         z-index: 99;
+// //         // transform: translateX(11px) translateY(-901px);
+// //         width: 330px !important;
+// //       justify-content: center;
+// //       display: flex;
+// //       flex-direction: column;
+// //       align-items: center;
+// //       top: 50%; /* Đặt phần tử ở giữa theo trục Y */
+// //       left: 50%; /* Đặt phần tử ở giữa theo trục X */
+// //       transform: translate(-50%, -131%) !important; /* Dịch chuyển phần tử điều chỉnh để giữ nó chính giữa */
+// //     }
+// //     .mobileImg4{
+// //         height: 800px !important;
+// //     }
+// // }
+// .Software__imgSF > img {
+//     width: 377px;
+//     height: 1074px;
+// }
+.containerSofware{
+    max-width: 100%;
+    &__child{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    &__imgSoftware{
+        width: 379px;
+        &>img{
+        height: 739px;
+        width: 100%;
+
+        }
+    }
+    &__boxTextSoftware{
+        width: 379px;
+        &>img{
+            width: 100%;
+    
+        
+        }
+    }
+    &__boxTextSoftware{
+        background-color: #eef3f9;
+    }
+    &__boxSoftware{
+        padding: 6px 70px 0 70px;
+    }
+    &__iconBoxSoft{
+        display: flex;
+        justify-content: center;
+        &>svg{
+            height: 56px;
+            width: 41px;
+            color: blue;
+            
+        }
+    }
+    &__boxTextSoft{
+       &>h3{
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+       }
+    }
+    &__paragraph{
+        font-size: 15px;
+        text-align: center;
+    }
+    &_button{
+        text-align: center;
+        margin-top: 20px;
+    }
+    &_btn{
+        &>span{
+            background-color: blue;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+        }
+    }
+}

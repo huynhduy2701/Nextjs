@@ -1,0 +1,22 @@
+.containerBaner{
+    background-color: #eef3f9;
+    max-width: 100%;
+    &_wrapBanner{
+       
+       
+    }
+    &__boxNav{
+       
+      
+        &>h1{
+            font-size: 32px;
+            font-weight: 500;
+        }
+    }
+    &_wrapBanner{
+        display: flex;
+        justify-content: center;
+        padding: 67px 15px;
+        text-align: center;
+    }
+}

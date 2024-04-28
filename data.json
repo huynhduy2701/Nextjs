@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "username": "huynhduy",
+      "email": "duy@gmail.com",
+      "password": "123456",
+      "id": "273c"
+    },
+    {
+      "id": "ed8a",
+      "email": "d",
+      "username": "d",
+      "password": "d"
+    },
+    {
+      "id": "bf73",
+      "username": "",
+      "password": ""
+    },
+    {
+      "id": "9b59",
+      "username": "",
+      "password": ""
+    },
+    {
+      "id": "dbef",
+      "username": "huynhduy",
+      "password": "123456"
+    }
+  ]
+}

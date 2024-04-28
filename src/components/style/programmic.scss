@@ -1,0 +1,84 @@
+.backgrounProgrammics{
+    position: relative;
+    background-image: url(https://programmics.net/wp-content/uploads/2019/09/2zespol-zarzadzajacy-czym-jest-i-kiedy-jest-potrzebny.jpg?id=1665);
+}
+// .programmics::before{
+//     content: '';
+//   display: block !important;
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   width: 100%;
+//   height: 100%;
+// }
+.backgroundWhite {
+    position: absolute;
+    left: 0; // Đặt vị trí bắt đầu từ cạnh trái của phần tử cha
+    top: 0; // Đặt vị trí bắt đầu từ cạnh trên của phần tử cha
+    width: 100%; // Chiều rộng của phần màu trắng sẽ bằng với phần tử cha
+    height: 100%; // Chiều cao của phần màu trắng sẽ bằng với phần tử cha
+    z-index: 1; // Đảm bảo phần màu trắng được hiển thị trên các phần tử khác
+
+    &::before {
+        
+        content: " "; // Thêm nội dung để phần tử pseudo-element hiển thị
+        display: block; // Thiết lập pseudo-element là một phần tử block
+        max-width: 1200px; // Chiều rộng của pseudo-element bằng với phần màu trắng
+        min-width: 320px;
+        height: 121px; // Chiều cao của pseudo-element bằng với phần màu trắng
+        background-color: white;
+        z-index: -1; // Đặt z-index âm để pseudo-element được hiển thị phía sau phần tử cha
+        border-radius: 10px;
+        transform: translateX(183px) translateY(669px);
+        box-shadow: 2px 2px 2px 2px RGBA( 169, 169, 169, 1 ) ;
+    }
+}
+
+.programmics{
+    padding: 100px 462px 200px 462px;
+    &__columns{
+        padding: 0 15px;
+    }
+}
+.program{
+    &__boxText{
+        display: flex;
+    }
+    &__icon{
+        margin-right: 16px;
+        &>svg{
+            width: 41px;
+            height: 56px;
+            color: white;
+        }
+    }
+    &__textInfo{
+        width: 480px;
+        &>h3{
+            position: relative;
+            margin-bottom: 19px;
+            padding-bottom: 19px;
+            line-height: 1.4em;
+            font-size: 36px;
+            color: white;
+            font-weight: 700;
+
+        }
+    }
+    &__contentProgram{
+        color: white;
+        &>p{
+            margin-bottom: 25.5px;
+            font-size: 15px;
+            line-height: 27px;
+
+        }
+    }
+}
+.deviderProgram{
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: azure;
+    transform: translateY(53px) translateX(-130px);
+}

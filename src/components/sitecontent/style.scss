@@ -1,0 +1,199 @@
+.containerSite{
+    background-color: #eef3f9;
+}
+.containerSite>main{
+    max-width: 1227px;
+    padding: 0 15px;
+    margin: auto;
+}
+.main{
+    &__wrapper{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       
+       
+    }
+    &__content{
+        position: relative;
+    }
+    &__conten1{
+        background-color: white;
+        border-radius: 10px;
+        margin: 0 5px;
+        margin-bottom: 20px;
+    }
+    &__top{
+        position: inherit;
+        transform: translateY(-75px);
+    }
+    
+    
+}
+.milestone{
+    position: relative;
+    width: 286px;
+    height: 240px;
+    &__wrapper{
+        padding: 33px 35px 35px 90px;
+        
+    }
+    &__icon{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: blue;
+        width: 70px;
+        height: 70px;
+        border-radius:  0 0 12px 0;
+        border-top-left-radius:10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        &>svg{
+            width: 37px;
+            height: 50px;
+            color: white;
+        }
+    }  
+    &__icon2{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #ef5b51;
+        width: 70px;
+        height: 70px;
+        border-radius:  0 0 12px 0;
+        border-top-left-radius:10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        &>svg{
+            width: 37px;
+            height: 50px;
+            color: white;
+        }
+    } 
+    &__icon3{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #ff6f00;
+        width: 70px;
+        height: 70px;
+        border-radius:  0 0 12px 0;
+        border-top-left-radius:10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        &>svg{
+            width: 37px;
+            height: 50px;
+            color: white;
+        }
+    }
+    &__count{
+        font-size: 36px;
+        line-height: 1em;
+        font-weight: 600;
+    }
+    &__text{
+        font-size: 14px;
+        margin-top: 10px;
+        line-height: 1.7em;
+    }
+}
+// @media screen and (max-width: 1000px) {
+//     .main__bottom{
+
+//         padding: 80px 0 156px 0 !important;
+//     }
+//     .main__conten1{
+//         width: 100%;
+//         height: 217px;
+//         margin-top: 15px;
+//     }
+//     .contentSite{
+//         &__icon{
+//             display: flex;
+//             justify-content: center;
+//             margin-right: 0 !important;
+//         }
+//         &__left{
+//             display: block !important;
+//             width: 360px !important;
+//             height: 377px !important;
+//             padding-left: 0 !important;
+//             &>h3{
+//                 font-size: 20px !important;
+//                 color: black !important;
+//             }
+//         }
+//         &__text{
+//             width: 330px !important ;
+//             height: 240px !important;
+//             margin: 15px 0px 10px 0px !important;
+//             line-height: initial !important;
+//             font-size: 20px !important;
+//             text-align: center !important;
+//             padding-right: 22px;
+//         }
+     
+//         &__author{
+//             padding-left: 0;
+//             padding-top: 15px;
+//             margin-top: 15px;
+//             padding-right: 0;
+//             font-size: 14px;
+//             border-top-color: #707070;
+//             border-top-width: 1px;
+//             border-top-style: solid !important;
+//         }
+//         &__right{
+//             padding: 0 15px !important;
+//         }
+//     }
+// }
+
+.contentSite{
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+        &__icon>svg{
+            color: #3b7eff;
+            width: 40px;
+            height: 40px;
+        }
+        &__icon{
+            margin-right: 28px;
+        }
+        &__text>h3{
+            line-height: 32px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        &__left{
+            display: flex;
+            padding-right: 50px;
+            padding-left: 15px;
+            border-right-width: 1px;
+            border-right-color:#707070 ;
+            border-right-style: solid ;
+            // flex-direction: row;
+        }
+        &__right{
+            padding: 0 15px 0 50px;
+        }
+        &__text{
+            width: 451px;
+            height: 192px;
+        }
+}
+.main__bottom{
+    padding: 80px 0;
+
+}

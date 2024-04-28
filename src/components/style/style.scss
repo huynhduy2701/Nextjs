@@ -1,0 +1,495 @@
+$font-weight-color: 500;
+$color-text: white;
+
+*{
+    // box-sizing: border-box;
+    // border: 1px solid black;
+}
+.navbarABout{
+    display: flex;
+    align-items: center;
+    &>span{
+        margin-left: 20px;
+    }
+}
+
+.dropdown {
+    position: relative;
+  
+    &-menu {
+        color: black;
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+  
+      li {
+        padding: 12px 16px;
+  
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
+  
+    &:hover &-menu {
+      display: block;
+      
+    }
+  }
+.carousel{
+    position: relative;
+    .slick-dots {
+        .slick-active {
+            button {
+                display: none !important;
+              }
+        }
+    } 
+    
+}
+
+nav {
+    // background-color: red;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    // position: sticky;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+
+    &__center {
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        width: 300px;
+        height: 120px;
+    }
+
+    .menu__content {
+        justify-content: space-around;
+        padding: 0 15px;
+    
+        & > ul {
+            display: flex;
+    
+            & > li {
+                color: $color-text;
+                font-weight: $font-weight-color;
+                padding: 30px 16px 26px 16px;
+                display: inline-block;
+                position: relative; // Thêm dòng này để xác định vị trí của đường gạch dưới
+                cursor: pointer; // Thêm dòng này để biến con trỏ thành dấu tay khi hover
+    
+                &:hover {
+                    &::after { // Sử dụng pseudoelement ::after để tạo đường gạch dưới
+                        content: ""; // Nội dung của pseudoelement, cần có để định dạng hiển thị
+                        position: absolute; // Định vị tuyệt đối so với phần tử cha
+                        left: 0; // Bắt đầu từ vị trí bên trái của phần tử cha
+                        bottom: -5px; // Khoảng cách từ phần tử cha xuống dưới (để nằm dưới chân)
+                        width: 100%; // Chiều rộng bằng 100% của phần tử cha
+                        height: 5px; // Chiều cao của đường gạch dưới
+                        background-color: #3b7eff; // Màu của đường gạch dưới
+                    }
+                }
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+
+        .service {
+            & > a {
+                display: flex;
+                align-items: center;
+            }
+
+            &__icon {
+                margin-right: 20px;
+            }
+
+            &__question {
+                & > h3 {
+                    color: $color-text;
+                    line-height: 27px;
+                    font-size: 14px;
+                    font-weight: $font-weight-color;
+                }
+            }
+
+            &__number {
+                color: $color-text;
+                line-height: 27px;
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+
+        .search {
+            width: 144px ;
+
+            &__column {
+                display: flex; /* Sử dụng flexbox */
+                justify-content: flex-end; /* Căn phải */
+                padding: 0 15px; /* Điều chỉnh padding nếu cần */
+            }
+
+            &__icon {
+                /* Bỏ thuộc tính text-align và thêm dòng này nếu cần */
+                 text-align: right; 
+            }
+            &__customicon{
+                font-size: 16px;
+             
+            }
+        }
+    }
+  
+    &__boxLogo {
+        width:130px;
+        height: 130px;
+        padding-bottom:20px ;
+      
+    }
+    &__box{
+        padding: 20px 25px 60px 25px;
+    }
+}
+footer{
+    background-color: #2c2f50 !important;
+   
+}
+.container{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+}
+
+
+.logoRes{
+    width: 130px;
+    height: 130px;
+}
+.buttonRes {
+  display: flex !important; // Hiển thị nút button khi độ rộng màn hình nhỏ hơn 960px
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20px;
+  scale: 1.5 !important;
+  color: black;
+}
+.menuMobile{
+    position: sticky;
+    background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+}
+.header__mobile{
+    position: absolute;
+    z-index: 9;
+    top:0;
+    background-color: white;
+    width: 300px;
+    height: 800px;
+    
+
+
+}
+.HeaderMenu{
+    position: relative;
+}
+
+@media screen and (max-width: 1000px) {
+    .menuRespon{
+        display: block !important;
+       }
+   .menuNav{
+    display: none !important;
+   }
+    .content{
+        // display: block !important;
+        padding: 80px 0 50px 0;
+        &__right{
+            display: block !important;
+        }
+        &__right{
+            display: block !important;
+        }
+        &__service{
+            padding: 0 15px 30px 15px !important;
+        }
+        &__title>h3{
+            padding-bottom: 0 !important;
+        }
+    }
+
+    
+    
+    .iconArrow{
+        right: 73px !important;
+    }
+    // .container{
+    //     padding-bottom: 50px !important;
+    // }
+}
+@keyframes TextAuto {
+    0% {
+        transform: translateY(0); // Khởi đầu từ vị trí ban đầu
+    }
+    50% {
+        transform: translateY(-50px); // Di chuyển lên trên 50px
+    }
+    100% {
+        transform: translateY(-50px); // Dừng lại ở vị trí cao nhất đã đạt được
+    }
+}
+.CaroselButton{
+    background-color: rgb(59, 126, 255);
+    position: absolute;
+    z-index: 99;
+    top:80vh;
+    left:18%;
+    border-radius: 10px;
+    line-height: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-color: rgb(59, 126, 255);
+    
+    &__Button{
+        padding: 16px 35px 16px 35px;
+        color: white;
+        &:hover{
+            color: black;
+        }
+    }
+    &:hover{
+        border-color: white;
+        background-color: transparent;
+        border: 2px solid white;
+        opacity: 50;
+       
+    }
+}
+.content{
+    display: flex;
+    &__left{
+        display: flex;
+    }
+    &__right{
+        display: flex;
+    }
+    &__service>a{
+        display: block;
+    }
+    &__img{
+        width: 170px;
+        align-items: start;
+    }
+    &__img>img{
+        width: 100px;
+        height: 100px;
+    }
+    &__service>a{
+        color: rgba(255,255,255,0.75);
+        margin: 10px 15px 0 0 ;
+    }
+    &__service{
+        line-height: initial;
+        padding: 0 15px;
+        width: 200px;
+    }
+    &__title>h3{
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 24px;
+        padding-bottom: 22px;
+    }
+}
+.wrapper{
+    margin: auto;
+    padding: 80px 159px 50px 159px;
+    &__top{
+        display: flex;
+        color: white;
+    }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__icon{
+        color: #3b7eff;
+        margin-right: 20px;
+    }
+    &__left{
+        display: flex;
+        align-items: center;
+    }
+    &__phone{
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    &__iconSocial{
+        display: flex;
+    }
+    &__center{
+        margin-top: 45px;
+        padding-bottom: 38px;
+    }
+    &__bottom{
+        padding-top: 19px;
+        border-top: 2px solid black;
+    }
+    &_text{
+        font-size: 14px;
+        color: #86879a;
+    }
+    
+}
+.textModule{
+    display: flex;
+    &__info>h3{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    &__title>h3{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    &__info{
+        width: 170px;
+        padding-bottom: 15px;
+    }
+    &__designInfo{
+        padding: 0 15px;
+        height: 61px;
+    }
+    &__designtitle{
+        padding: 0 15px;
+        height: 61px;
+    }
+    &__title{
+        width: 170px;
+        padding-bottom: 15px;
+    }
+}
+.formInput {
+    position: relative; /* Thêm dòng này */
+}
+
+.formInput > input {
+    padding: 15px 60px 15px 20px;
+    border-radius: 5px;
+    position: relative; /* Thêm dòng này */
+    color: black;
+}
+
+.iconArrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* Đưa icon vào giữa theo chiều dọc */
+    transform: translateY(-50%);
+    right: 10px; /* Điều chỉnh vị trí của icon */
+    z-index: 2;
+    width: 24px;
+    height: 24px;
+    fill: black;
+}
+.icon_social{
+    margin-right: 15px;
+    color: rgba(255,255,255,0.75);
+}
+.animate{
+    animation: text-animation 2s 1;
+}
+.animate2{
+    animation: text-animationT 2s 1;
+}
+@keyframes text-animation {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes text-animationT {
+    0% {
+        transform: translateY(10%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.submenu__reponsive{
+    display: none ;
+    margin: 14px 0 0 10px;
+    font-size: 15px;
+}
+.submenu__reponsive-show {
+    display: block; /* Hiển thị menu con */
+}
+.submenu__shop{
+    display: none;
+    margin: 14px 0 0 10px;
+    font-size: 15px;
+}
+.submenu__shop-show{
+    display: block; /* Hiển thị menu con */
+}
+
+
+.submenu__reponsive > li{
+
+padding: 7px  0;
+border-bottom: 1px dashed #e5e5e5;
+}
+.menu__main__2 >li {
+    padding: 7px  0;
+    border-bottom: 1px dashed #e5e5e5;
+}
+.searchForm >input{
+    width: 250px;
+    height: 45px;
+    padding: 10px 50px 10px 10px;
+    border-radius: 7px;
+    border: 1px solid #e5e5e5;
+    color: black;
+    position: relative;
+}
+.btnIconForm{
+    position: absolute;
+    transform: translateY(16px) translateX(-30px);
+}

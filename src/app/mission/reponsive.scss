@@ -1,0 +1,100 @@
+@media screen and (min-width:320px) and (max-width:430px){
+    .mission_wrap{
+        text-align: center;
+    }
+    .mission_button{
+        display: flex;
+        justify-content: center;
+    }
+    .mission_text > h3 {
+        font-size: 28px !important;
+      }
+    .gallery{
+        padding: 0 !important;
+    }
+    .banner_box{
+        display: none;
+    }
+    .boxMobile,.boxMobile_wrap,.boxMobile_box,.boxMobile_cardItem{
+        width: 100%;
+    }
+    .boxMobile_cardItem{
+        background-color: #eef3f9;
+        padding: 5px !important;
+        border-radius: 10px;
+        
+
+    } 
+    .boxMobile_cardItem{
+        margin-bottom: 20px;
+        &>p{
+            font-size: 23px;
+            font-weight: 500;
+            text-align: center;
+        }
+    }
+    .banner_textHead{
+        &>p{
+            font-size: 15px;
+            font-weight: 0;
+        }
+    }
+    .banner_bottom{
+        &>p{
+            color: #8b8c8e;
+        }
+    }
+    .boxMobile_box{
+        padding: 80px 10px 80px 10px;
+    }
+    .boxMobile_openContent{
+        padding: 30px;
+        display: none;
+    }
+    .boxMobile_cardItem{
+        &>p{
+            cursor: pointer;
+        }
+    }
+    .header_open {
+        display: block; /* Hoặc display: flex; tùy thuộc vào cách bạn muốn hiển thị nội dung */
+      }
+    
+}
+
+@media screen and (min-width:430px) and (max-width:768px){
+    .boxMobile{
+        display: none;
+    }
+    .banner_box{
+        display: block;
+    }
+    .banner_box{
+        padding: 60px 10px 60px 10px !important;
+    }
+    .banner_card{
+        width: 100% !important;
+    }
+    .gallery{
+        padding: 0 !important;
+    }
+    .mission_boxText{
+        text-align: center;
+    }
+    .mission_button{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width:767px) and (max-width:1200px){
+   .banner_card{
+    width: 100% !important;
+   }
+   .banner_boxText{
+    width: 100% !important;
+   }
+   .boxMobile{
+    display: none;
+}
+}

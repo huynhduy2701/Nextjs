@@ -1,0 +1,44 @@
+.containerRaihelp{
+    max-width: 100%;
+    min-height: 100%;
+    background-color: #eef3f9;
+}
+.RailHelp{
+    padding: 50px 159px 50px 159px;
+        &__icon{
+            margin-right: 27px;
+           &>svg{
+            width: 41px;
+            height: 56px;
+            color: blue;
+           }
+        }
+        &__right{
+            display: flex;
+            width: 600px;
+        }
+        &__textRailHelp{
+            &> h3 {
+                font-size: 36px;
+                font-weight: 700;
+                line-height: 1.4em;
+            }
+        }
+        &__content{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &__left{
+            width: 370px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+}
+@media screen and (min-width : 768px) and (max-width: 1114px) {
+    .RailHelp{
+        padding: 50px 0 !important;
+    }
+}

@@ -1,0 +1,98 @@
+@charset "UTF-8";
+.carousel {
+  position: relative;
+
+ 
+}
+
+
+nav {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+}
+.menu__center {
+  display: flex;
+  align-items: center;
+}
+.menu__logo {
+  width: 300px;
+  height: 120px;
+}
+.menu .menu__content {
+  justify-content: space-around;
+  padding: 0 15px;
+}
+.menu .menu__content > ul {
+  display: flex;
+}
+.menu .menu__content > ul > li {
+  color: white;
+  font-weight: 500;
+  padding: 30px 16px 26px 16px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.menu .menu__content > ul > li:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 5px;
+  background-color: #3b7eff;
+}
+.menu__right {
+  display: flex;
+  align-items: center;
+}
+.menu__right .service > a {
+  display: flex;
+  align-items: center;
+}
+.menu__right .service__icon {
+  margin-right: 20px;
+}
+.menu__right .service__question > h3 {
+  color: white;
+  line-height: 27px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.menu__right .service__number {
+  color: white;
+  line-height: 27px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.menu__right .search {
+  width: 144px !important;
+}
+.menu__right .search__column {
+  display: flex; /* Sử dụng flexbox */
+  justify-content: flex-end; /* Căn phải */
+  padding: 0 15px; /* Điều chỉnh padding nếu cần */
+}
+.menu__right .search__icon {
+  /* Bỏ thuộc tính text-align và thêm dòng này nếu cần */
+  text-align: right;
+}
+.menu__right .search__customicon {
+  font-size: 16px;
+}
+
+footer {
+  background-color: #2c2f50 !important;
+}
+footer .container {
+  padding: 0 15px 0 15px;
+  margin: auto;
+}/*# sourceMappingURL=style.css.map */

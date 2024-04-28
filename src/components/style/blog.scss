@@ -1,0 +1,199 @@
+.BlogContainer{
+    max-width: 100%;
+    height: 1200px;
+    background-color: #ffffff;
+}
+.containerheight{
+    padding: 103px 159px 84px 159px;
+}
+.Blog{
+    &__BlogIcon{
+        width: 74px;
+        height: 74px;
+        background-color: #eef3f9;
+        border-radius: 10px;
+        margin-bottom: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &>svg{
+            width: 31px;
+            height: 41px;
+            color :blue;
+
+        }
+    }
+    &__blogTextTitle{
+        margin-bottom: 9px;
+        padding-bottom: 9px;
+        text-align: center;
+        &>h3{
+            font-size: 36px;
+            line-height: 1.4em;
+            font-weight: 700;
+            position: relative;
+            margin-bottom: 9px;
+            padding-bottom: 9px;
+        }
+    }
+    &__blogTop{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__blogCard{
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px 2px RGBA( 169, 169, 169, 1 );
+        margin: 0 15px;
+        width: 369px;
+        height: 583px;
+        &:hover{
+
+        }
+        
+        
+        
+    }
+    &__postner{
+        // width: 369px;
+        // height: 583px;
+        // padding: 0 30px;
+        
+    }
+    &__blogMedia{
+        position: relative;
+        margin-bottom: 30px;
+    }
+    &__date{
+        position: absolute;
+        width: 215px;
+        height: 40px;
+        background-color: #ffffff;
+        transform: translateX(50px) translateY(228px);
+        top: 0;
+        left: -50px;
+        border-radius: 0 10px 0 0;
+        &>a{
+            padding: 12px 30px 0 30px;
+            display: flex;
+            &::before{
+                content :"\1F4C5";
+                margin-right:10px ;
+                color: blue;
+            }
+        }
+    }
+    &__blogInfo{
+        padding: 0 30px 20px 30px;
+        &>h3{
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            word-break: break-word;
+        }
+    }
+    &__blogBottom{
+      
+    }
+    &__blogAuthor{
+        display: flex;
+        &>img{
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            margin-right: 10px  ;
+        }
+    }
+    &__Blogwrap{
+            //  width: 369px;
+            // height: 583px;
+            margin-top: 41px;
+    }
+    &__blogContent{
+        color: #4c4c4d;
+        margin-top: 18px;
+        font-size: 15px;
+        line-height: 27px;
+        font-weight: 400;
+    }
+    &__blogPost{
+         margin-top: 30px;
+        padding-top: 21px;
+        display: flex;
+        justify-content: space-between;
+        border-top-color: black;
+        border-top-style: solid;
+        border-top-width: thin;
+    }
+    &__formatImg{
+       &>a{
+        &>img{
+            border-radius: 10px ;
+        }
+       }
+    }
+    &__blogRight{
+        &::before{
+           
+        }
+    }
+    &__blogCenter{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+}
+.blogDivider{
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: blue;
+    transform: translateX(185px) translateY(50px);
+    top: 0;
+    left: 0;
+}
+.Blog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    &__content{
+      &>p{
+        font-size: 14px;
+        line-height: 27px;
+        &>a{
+            color: #3b7eff;
+        }
+      }
+    }
+}
+.Blog__blogBottom{
+    margin-top: 17px;
+    text-align: center;
+    
+}
+@media screen and (min-width:768px) and (max-width:1114px){
+    .Blog{
+
+        &__Blogwrap{
+            //  width: 369px;
+            // height: 583px;
+            margin-top: 214px !important;
+        }
+        &__blogCard{
+            margin-bottom: 20px;
+        }
+    }
+    .BlogContainer {
+        // max-width: 100%;
+        height: 100% !important;
+    }
+    .containerheight{
+        padding: 103px 0 84px !important;
+    }
+}

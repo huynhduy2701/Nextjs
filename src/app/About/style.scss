@@ -1,0 +1,127 @@
+.container {
+    width: 100%; /* Chiều rộng container sẽ tự điều chỉnh để vừa với nội dung */
+    max-width: 1200px; /* Đặt chiều rộng tối đa của container */
+    margin-left: auto; /* Căn lề trái tự động */
+    margin-right: auto; /* Căn lề phải tự động */
+    padding-left: 15px; /* Thêm padding bên trái */
+    padding-right: 15px; /* Thêm padding bên phải */
+}
+.businissWeAre {
+    max-width: 100%;
+    min-height: 100%;
+    &__wrap{
+        padding-top: 88px;
+        padding-bottom: 40px;
+    }
+    &__boxTop {
+        padding-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; // Đảm bảo các phần tử con nằm cách nhau một cách đều đặn
+    }
+
+    &__img {
+        width: 670px; // Sử dụng calc để tính toán kích thước của ảnh
+        min-height: 300px;
+        background-size: cover;
+        background-position: center;
+        background-image: url(https://programmics.net/wp-content/uploads/2019/09/img_03.jpg?id=273);
+    }
+
+    &__boxText {
+        width: 405px;
+        &>p{
+            padding: 8px 20px;
+            color: blue;
+            background-color: #eef3f9;
+            width: 40%;
+            border-radius: 10px;
+        }
+    }
+    &__contentText{
+       &>h3{
+        font-size: 36px;
+        line-height: 1.4em;
+        font-weight: 600;
+       }
+       &>a{
+        margin-top: 35px;
+        background-color: #3b7eff;
+        min-height: 50px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        &>span{
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 0 25px;
+        }
+       }
+    }
+    &__line{
+        width: 30px;
+        height: 3px;
+        background-color: blue;
+        position: absolute;
+        border-radius: 10px;
+
+    }
+    &__desc{
+        &>p{
+            font-size: 15px;
+            line-height: 27px;
+            font-weight: 400;
+        }
+    }
+    &__column{
+        cursor: pointer;
+        width: 360px;
+        border-radius: 10px;
+        border: 1px solid grey;
+        margin: 0 15px;
+        box-shadow: 5px 5px 5px 5px RGBA( 192, 192, 192, 1 );
+        &:hover{
+            background-color: #3b7eff ; 
+           
+        }
+    }
+    &__card{
+        padding: 40px;
+        display: flex;
+    }
+    &__icon{
+        display: flex;
+        align-items: center;
+        margin-right: 28px;
+        &>svg{
+            width: 50px;
+            height: 50px;
+            color: blue;
+        }
+    }
+    &__textBox{
+      &>h3{
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.43m;
+      }
+    }
+    &__desc{
+        margin-top: 9px;
+        &>p{
+            font-size: 15px;
+            line-height: 27px;
+            color: #404040;
+        }
+    }
+    &__boxBottom{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+.businissWeAre__card:hover .businissWeAre__icon > svg,
+.businissWeAre__card:hover .businissWeAre__textBox * {
+    color: white; // Chuyển màu chữ và icon sang trắng khi hover
+}
