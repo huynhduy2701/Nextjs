@@ -1,15 +1,14 @@
 import TitlePage from "@/components/titlepage"
 import NavBarMenu from "../navbar/navbar"
-import Paragraph from "./paragraph"
-import './reponsive.scss'
 import '../../components/style/style.scss'
-const CaseStudy=()=>{
+import FormContact from "./form"
+const page=()=>{
     return (
         <div>
             {/* <NavBarMenu/> */}
-            <TitlePage message={"Case Study"}/>
-            <Paragraph/>
+            <TitlePage message={'Contacts'}/>
+            <FormContact/>
         </div>
     )
 }
-export default CaseStudy
+export default page

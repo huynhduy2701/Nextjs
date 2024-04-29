@@ -1,4 +1,5 @@
 import './style.scss'
+import './reponsive.scss'
 const ProductBusiness=()=>{
     return (
         <div className='business'>

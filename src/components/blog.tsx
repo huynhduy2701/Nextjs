@@ -5,6 +5,7 @@ import metting from '../../public/assets/metting.png'
 import { IoNewspaperOutline } from "react-icons/io5";
 import user from '../../public/assets/imgUser.png'
 import './style/reponsive.scss'
+import { MdArrowForwardIos } from "react-icons/md";
 const Blog=()=>{
     return (
         <div className='BlogContainer' > 
@@ -70,6 +71,9 @@ const Blog=()=>{
                                         <div className='Blog__blogContent'>
                                             {/* content */}
                                             1. Create a direct merchandising medium for your business Having a Mob...
+                                            <span className='Blog__arrow'>
+                                                <MdArrowForwardIos/>
+                                            </span>
                                         </div>
                                         <div className='Blog__blogPost'>
                                             {/* arrow Link */}
@@ -120,6 +124,9 @@ const Blog=()=>{
                                         <div className='Blog__blogContent'>
                                             {/* content */}
                                             1. Create a direct merchandising medium for your business Having a Mob...
+                                            <span className='Blog__arrow'>
+                                                <MdArrowForwardIos/>
+                                            </span>
                                         </div>
                                         <div className='Blog__blogPost'>
                                             {/* arrow Link */}
@@ -170,6 +177,9 @@ const Blog=()=>{
                                         <div className='Blog__blogContent'>
                                             {/* content */}
                                             1. Create a direct merchandising medium for your business Having a Mob...
+                                            <span className='Blog__arrow'>
+                                                <MdArrowForwardIos/>
+                                            </span>
                                         </div>
                                         <div className='Blog__blogPost'>
                                             {/* arrow Link */}

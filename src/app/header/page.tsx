@@ -1,7 +1,7 @@
 "use client"
-import "./style/style.scss";
+import "./style.scss";
 import Image from "next/image";
-import logo from "../../public/assets/Copy-of-Copy-of-Programmics.png";
+import logo from "../../../public/assets/Copy-of-Copy-of-Programmics.png";
 import { RiWhatsappFill } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import Link from "next/link";
@@ -9,21 +9,22 @@ import { Carousel } from "antd";
 import img2 from "../../public/assets/imgpeople.png";
 import img1 from "../../public/assets/cungtay.png";
 import { FaBars } from "react-icons/fa6";
-import logoRes from "../../public/assets/Programmics-1-removebg-preview.png"
+import logoRes from "../../../public/assets/Programmics-1-removebg-preview.png"
 import { useEffect, useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosSearch } from "react-icons/io";
-import './style/reponsive.scss'
+// import './style/reponsive.scss'
 import { useRouter } from "next/router";
 import { usePathname } from 'next/navigation'
 import { IoIosArrowDown } from "react-icons/io";
+
 const NavBar = () => {
-  const pathname = usePathname()
+//   const pathname = usePathname()
  const [menuOpen,setMenuOpen]=useState(false)
  const [dropAbout, setDropAbout] = useState(false);
  const [dropShop,setDropShop]=useState(false);
 //  const router=useRouter();
- const[isHome,setIsHome]=useState(false);
+//  const[isHome,setIsHome]=useState(false);
 //  useEffect(()=>{
 //   setIsHome(pathname==="/")
 //  },[pathname])
@@ -38,22 +39,33 @@ const NavBar = () => {
  const toggleMenu = () => {
   setMenuOpen(!menuOpen);
 };
-
+const pathname = usePathname();
+const isHome = pathname === '/';
 
   return (
     <div>
-      <nav className={`sidebar ${pathname === '/' ? 'absolute' : ''} `} >
+      <nav className={`sidebar ${isHome ? 'absolute' : 'relative'}`}>
         <div className="container">
           <div className="menu">
             <div className="menu__left">
               <div className="menu__logo menuNav">
-                <Image src={logo} alt="logo" />
+                {isHome ?(
+
+                    <Image src={logo} alt="logo"  className="logo1" />
+                ):(
+
+                <Image src={logoRes} alt="logo"  className="logo2"/>
+                )}
               </div>
             </div>
             <div className="menu__center">
               <div className="menu__content">
                 <ul className="menuNav">
-                  <li>Home</li>
+                  <li>
+                    <Link href={'/'}>
+                    Home
+                    </Link>
+                  </li>
                   <li className="dropdown">
                     <a href={"/About"} className="navbarABout">
                         About 
@@ -165,13 +177,16 @@ const NavBar = () => {
                     <div className="main__menu">
                         <ul className="menu__main__2">
                             <li>
-                                <Link href="#">
+                                <Link href="/">
                                     Home
                                 </Link>
                             </li>
-                            <li>
-                              <Link href="#" onClick={toggleAbout} >
+                            <li className="aboutmenu">
+                              <Link href="#"  >
                                   About
+                                  <span  onClick={toggleAbout}>
+                            <IoIosArrowDown/>
+                       </span>
                               </Link>
                               <ul className={`submenu__reponsive ${dropAbout ? 'submenu__reponsive-show' : ''}`}>
                                   <li>
@@ -184,7 +199,7 @@ const NavBar = () => {
                                       <Link href={'/mission'}>Mission</Link>
                                   </li>
                                   <li>
-                                      <Link href="/">Why Choose Programmics</Link>
+                                      <Link href="whychooseProgrammics">Why Choose Programmics</Link>
                                   </li>
                               </ul>
                           </li>
@@ -193,9 +208,12 @@ const NavBar = () => {
                                     Pricing And Plans
                                 </Link>
                             </li>
-                            <li>
-                                <Link href="#" onClick={toggleShop}>
-                                    Shop
+                            <li className="btnShop">
+                                <Link href="#"  >
+                                    Shop 
+                                    <span  onClick={toggleShop}>
+                                <IoIosArrowDown/>
+                                </span>
                                 </Link>
                                 <ul className={`submenu__shop ${dropShop ? 'submenu__shop-show' :""  }`}>
                                    <li>Cart</li>
@@ -218,7 +236,7 @@ const NavBar = () => {
             )}
            </div>
         </div>
-      {/* carousel */}
+
      
 
 

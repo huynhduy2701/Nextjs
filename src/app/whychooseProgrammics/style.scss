@@ -1,4 +1,4 @@
-.container {
+.containerWhy {
     width: 100%; /* Chiều rộng container sẽ tự điều chỉnh để vừa với nội dung */
     max-width: 1200px; /* Đặt chiều rộng tối đa của container */
     margin-left: auto; /* Căn lề trái tự động */
@@ -6,6 +6,11 @@
     padding-left: 15px; /* Thêm padding bên trái */
     padding-right: 15px; /* Thêm padding bên phải */
 }
+.Statistical__column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 .banner{
     width: 100%;
     background-color: #2c2f50;

@@ -7,6 +7,7 @@ import cungtay from '../../../public/assets/cungtay.png'
 import manword from '../../../public/assets/menwork.png'
 import education from '../../../public/assets/education.png'
 import { RxBackpack } from "react-icons/rx";
+import './reponsive.scss'
 const CaseStudy=()=>{
     return (
         <div className=''>

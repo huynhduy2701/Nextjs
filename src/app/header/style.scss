@@ -1,0 +1,203 @@
+$font-weight-color: 500;
+$color-text: white;
+
+.navbarABout{
+    display: flex;
+    align-items: center;
+    &>span{
+        margin-left: 20px;
+    }
+}
+.aboutmenu{
+    &>a{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.btnShop{
+    &>a{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.dropdown {
+    position: relative;
+  
+    &-menu {
+        color: black;
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+  
+      li {
+        padding: 12px 16px;
+  
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
+  
+    &:hover &-menu {
+      display: block;
+      
+    }
+  }
+  
+nav {
+    // background-color: red;
+    display: flex;
+    justify-content: center;
+    // position: absolute;
+    z-index: 1;
+    width: 100%;
+    min-height: 100%;
+    // position: sticky;
+}
+nav.absolute {
+    position: absolute !important; /* Đối với trang home (`/`) */
+}
+.absolute {
+    position: absolute;
+  }
+  
+  .relative {
+    position: relative;
+    background-color: white;
+    color: black;
+  
+    /* Áp dụng màu chữ đen cho các thành phần con */
+    a,
+    li,
+    h3,
+    p {
+      color: black;
+    }
+  }
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+
+    &__center {
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        width: 300px;
+        height: 120px;
+    }
+
+    .menu__content {
+        justify-content: space-around;
+        padding: 0 15px;
+    
+        & > ul {
+            display: flex;
+    
+            & > li {
+                color: $color-text;
+                font-weight: $font-weight-color;
+                padding: 30px 16px 26px 16px;
+                display: inline-block;
+                position: relative; // Thêm dòng này để xác định vị trí của đường gạch dưới
+                cursor: pointer; // Thêm dòng này để biến con trỏ thành dấu tay khi hover
+    
+                &:hover {
+                    &::after { // Sử dụng pseudoelement ::after để tạo đường gạch dưới
+                        content: ""; // Nội dung của pseudoelement, cần có để định dạng hiển thị
+                        position: absolute; // Định vị tuyệt đối so với phần tử cha
+                        left: 0; // Bắt đầu từ vị trí bên trái của phần tử cha
+                        bottom: -5px; // Khoảng cách từ phần tử cha xuống dưới (để nằm dưới chân)
+                        width: 100%; // Chiều rộng bằng 100% của phần tử cha
+                        height: 5px; // Chiều cao của đường gạch dưới
+                        background-color: #3b7eff; // Màu của đường gạch dưới
+                    }
+                }
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+
+        .service {
+            & > a {
+                display: flex;
+                align-items: center;
+            }
+
+            &__icon {
+                margin-right: 20px;
+            }
+
+            &__question {
+                & > h3 {
+                    color: $color-text;
+                    line-height: 27px;
+                    font-size: 14px;
+                    font-weight: $font-weight-color;
+                }
+            }
+
+            &__number {
+                color: $color-text;
+                line-height: 27px;
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+
+        .search {
+            width: 144px ;
+
+            &__column {
+                display: flex; /* Sử dụng flexbox */
+                justify-content: flex-end; /* Căn phải */
+                padding: 0 15px; /* Điều chỉnh padding nếu cần */
+            }
+
+            &__icon {
+                /* Bỏ thuộc tính text-align và thêm dòng này nếu cần */
+                 text-align: right; 
+            }
+            &__customicon{
+                font-size: 16px;
+             
+            }
+        }
+    }
+  
+    &__boxLogo {
+        width:130px;
+        height: 130px;
+        padding-bottom:20px ;
+      
+    }
+    &__box{
+        padding: 20px 25px 60px 25px;
+    }
+}
+footer{
+    background-color: #2c2f50 !important;
+   
+}
+.container{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+.logo2{
+    width: 130px;
+    height: 130px;
+}

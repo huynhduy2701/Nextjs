@@ -4,7 +4,7 @@ import { BsClockHistory } from "react-icons/bs";
 const BusinissWeAre=()=>{
     return (
         <div className="businissWeAre">
-            <div className="container">
+            <div className="containerABout">
                 <div className="businissWeAre__wrap">
                     <div className="businissWeAre__boxTop">
                         <div className="businissWeAre__img">

@@ -30,6 +30,17 @@
     top: 5%;
 }
 @media (min-width:320px) and (max-width:767px) {
+    .Blog__blogCard:hover {
+        transform: translateY(0px) !important;
+    }
+    .Blog__arrow {
+        position: absolute;
+        display: block !important;
+        
+    }
+    .Blog__blogCard:hover .Blog__arrow {
+        display: block;
+      }
     .contentBox__icon{
         margin-bottom: 22px;
     }
@@ -274,6 +285,17 @@
     }
 }
 @media (min-width:768px) and (max-width:1001px) {
+    .Blog__blogCard:hover {
+        transform: translateY(0px) !important;
+    }
+    .Blog__arrow {
+        position: absolute;
+        display: block !important;
+        
+    }
+    .Blog__blogCard:hover .Blog__arrow {
+        display: block;
+      }
 .card__box{
     margin-bottom: 30px !important;
 }

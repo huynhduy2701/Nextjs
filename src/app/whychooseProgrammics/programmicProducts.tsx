@@ -1,12 +1,14 @@
 import './style.scss'
+import './reponsive.scss'
 import Link from 'next/link'
+import './reponsive.scss'
 const ProgrammicsProducts=()=>{
     return(
         <div className="product">
-            <div className="container">
+            <div className="containerWhy">
                 <div className='product__wrap'>
                     <div className='product__contentBox'>
-                        <div className='product__infoProduct'>
+                        <div className='product__infoProduct item1'>
                             <h3>Programmics</h3>
                             <div className='product__contentProduct'>
                                 <h3>
@@ -32,7 +34,7 @@ const ProgrammicsProducts=()=>{
                                 <span>Read More</span>
                             </Link>
                         </div>
-                        <div className='product__imgProduct'>
+                        <div className='product__imgProduct item2'>
                                 
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 import "./style/baner.scss"
+import Link from 'next/link'
 const TitlePage = (props: any) => {
     return (
         <div className="containerBaner">
@@ -8,7 +9,7 @@ const TitlePage = (props: any) => {
                     <h1>
                         {props.message}
                     </h1>
-                    <p>Home {'>'} {props.message} </p>
+                    <p><Link href={'/'}>Home</Link> {'>'} {props.message} </p>
                 </div>
             </div>
         </div>

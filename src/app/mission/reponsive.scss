@@ -58,7 +58,8 @@
     }
     .header_open {
         display: block; /* Hoặc display: flex; tùy thuộc vào cách bạn muốn hiển thị nội dung */
-      }
+        transform: translateX(10px);
+    }
     
 }
 

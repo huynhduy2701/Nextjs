@@ -16,7 +16,7 @@ import SoftwareProducts from "@/components/softwareProducts";
 export default function page() {
   return (
   <div>
-    <NavBar/>
+    {/* <NavBar/> */}
     <CarouselNav/>
     <SiteContent/>
     <CaseStudies/>

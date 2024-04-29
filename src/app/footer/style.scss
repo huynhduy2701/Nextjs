@@ -1,0 +1,13 @@
+@media screen and (min-width: 768px) and (max-width: 1114px) {
+    .content__left{
+        flex-wrap: wrap;
+    }
+    .wrapper{
+        padding: 0 !important;
+    }
+    .menu__right {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+}

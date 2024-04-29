@@ -1,31 +1,116 @@
 {
   "users": [
     {
-      "username": "huynhduy",
-      "email": "duy@gmail.com",
-      "password": "123456",
-      "id": "273c"
+      "id": "b5a6",
+      "username": "",
+      "password": ""
     },
     {
-      "id": "ed8a",
-      "email": "d",
+      "id": "3faa",
+      "email": "duy",
+      "username": "duy",
+      "password": "duy"
+    },
+    {
+      "id": "564e",
       "username": "d",
       "password": "d"
     },
     {
-      "id": "bf73",
-      "username": "",
-      "password": ""
+      "id": "c00c",
+      "email": "duy",
+      "username": "duy",
+      "password": "duy"
     },
     {
-      "id": "9b59",
-      "username": "",
-      "password": ""
+      "id": "3b5c",
+      "email": "duy1",
+      "username": "duy1",
+      "password": "duy"
     },
     {
-      "id": "dbef",
-      "username": "huynhduy",
+      "id": "4ff0",
+      "email": "a",
+      "username": "a",
+      "password": "a"
+    },
+    {
+      "id": "09a3",
+      "email": "duy@gmail.com",
+      "lastName": "duy",
+      "firstName": "duy",
+      "phone": "huỳnh",
+      "password": "27012004"
+    },
+    {
+      "id": "334e",
+      "email": "d",
+      "lastName": "duy",
+      "firstName": "duy",
+      "phone": "111111111111",
+      "password": "d"
+    },
+    {
+      "id": "2958",
+      "email": "duy1234@gmail.com",
+      "lastName": "ddda",
+      "firstName": "d uy",
+      "phone": "0111111111",
       "password": "123456"
+    },
+    {
+      "id": "9d5d",
+      "email": "duy12324@gmail.com",
+      "lastName": "ddda",
+      "firstName": "d uy",
+      "phone": "0111111111",
+      "password": "123456"
+    },
+    {
+      "id": "c150",
+      "email": "huynhdu@gmail.com",
+      "lastName": "duyyy",
+      "firstName": "huuynh",
+      "phone": "0325096130",
+      "password": "27012004"
+    },
+    {
+      "id": "325b",
+      "email": "huynhduy@gmail.com",
+      "lastName": "duyyy",
+      "firstName": "huuynh",
+      "phone": "0325096130",
+      "password": "27012004"
+    }
+  ],
+  "product": [
+    {
+      "id": "1",
+      "name": "iphone 15",
+      "price": "1000000",
+      "img": "assets/iphone15.png",
+      "description": "iPhone 15 Pro Max thiết kế mới với chất liệu titan chuẩn hàng không vũ trụ bền bỉ, trọng lượng nhẹ, đồng thời trang bị nút Action và cổng sạc USB-C tiêu chuẩn giúp nâng cao tốc độ sạc. Khả năng chụp ảnh đỉnh cao của iPhone 15 bản Pro Max đến từ camera chính 48MP, camera UltraWide 12MP và camera telephoto có khả năng zoom quang học đến 5x. Bên cạnh đó, iPhone 15 ProMax sử dụng chip A17 Pro mới mạnh mẽ. Xem thêm chi tiết những điểm nổi bật của sản phẩm qua thông tin sau!"
+    },
+    {
+      "id": "2",
+      "name": "iphone 14",
+      "price": "1000000",
+      "img": "assets/iphone14.png",
+      "description": "iPhone 14 Pro Max thiết kế mới với chất liệu titan chuẩn hàng không vũ trụ bền bỉ, trọng lượng nhẹ, đồng thời trang bị nút Action và cổng sạc USB-C tiêu chuẩn giúp nâng cao tốc độ sạc. Khả năng chụp ảnh đỉnh cao của iPhone 15 bản Pro Max đến từ camera chính 48MP, camera UltraWide 12MP và camera telephoto có khả năng zoom quang học đến 5x. Bên cạnh đó, iPhone 15 ProMax sử dụng chip A17 Pro mới mạnh mẽ. Xem thêm chi tiết những điểm nổi bật của sản phẩm qua thông tin sau!"
+    },
+    {
+      "id": "3",
+      "name": "iphone 13",
+      "price": "1000000",
+      "img": "assets/iphone13.png",
+      "description": "iPhone 13 Pro Max thiết kế mới với chất liệu titan chuẩn hàng không vũ trụ bền bỉ, trọng lượng nhẹ, đồng thời trang bị nút Action và cổng sạc USB-C tiêu chuẩn giúp nâng cao tốc độ sạc. Khả năng chụp ảnh đỉnh cao của iPhone 15 bản Pro Max đến từ camera chính 48MP, camera UltraWide 12MP và camera telephoto có khả năng zoom quang học đến 5x. Bên cạnh đó, iPhone 15 ProMax sử dụng chip A17 Pro mới mạnh mẽ. Xem thêm chi tiết những điểm nổi bật của sản phẩm qua thông tin sau!"
+    },
+    {
+      "id": "4",
+      "name": "iphone 11",
+      "price": "1000000",
+      "img": "assets/iphone11.png",
+      "description": "iPhone 11 Pro Max thiết kế mới với chất liệu titan chuẩn hàng không vũ trụ bền bỉ, trọng lượng nhẹ, đồng thời trang bị nút Action và cổng sạc USB-C tiêu chuẩn giúp nâng cao tốc độ sạc. Khả năng chụp ảnh đỉnh cao của iPhone 15 bản Pro Max đến từ camera chính 48MP, camera UltraWide 12MP và camera telephoto có khả năng zoom quang học đến 5x. Bên cạnh đó, iPhone 15 ProMax sử dụng chip A17 Pro mới mạnh mẽ. Xem thêm chi tiết những điểm nổi bật của sản phẩm qua thông tin sau!"
     }
   ]
 }

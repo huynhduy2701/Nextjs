@@ -1,0 +1,77 @@
+.containerContacts {
+    width: 100%; /* Chiều rộng container sẽ tự điều chỉnh để vừa với nội dung */
+    max-width: 1200px; /* Đặt chiều rộng tối đa của container */
+    margin-left: auto; /* Căn lề trái tự động */
+    margin-right: auto; /* Căn lề phải tự động */
+    padding-left: 15px; /* Thêm padding bên trái */
+    padding-right: 15px; /* Thêm padding bên phải */
+}
+.form{
+   max-width: 100%;
+   min-width: 100%;
+   &__formInput{
+    width: 100%;
+    display: inline-block;
+    padding: 50px;
+   }
+   &__nameGroup{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+   }
+   &__firstName,&__lastName{
+    padding: 0 2px;
+    width: 50%;
+    &>input{
+        width: 100%;
+        border: 1px solid blue;
+        border-radius: 10px;
+        padding: 10px;
+    }
+   }
+   &__email{
+    width: 100%;
+    padding: 10px 0;
+
+    &>input{
+        width: 100%;
+        border: 1px solid blue;
+        border-radius: 10px;
+        padding: 10px;
+    }
+   }
+   &__message{
+    width: 100%;
+    padding: 10px 0;
+
+    &>textarea{
+        width: 100%;
+        border: 1px solid blue;
+        border-radius: 10px;
+        padding: 10px;
+    }
+   }
+   &__button{
+    padding: 15px 0;
+
+   }
+   &__btn{
+    background-color:#7d3ed5 ;
+    width: 160px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 10px;
+    &>span{
+        padding: 15px;
+        color: white;
+        font-weight: 600;
+    }
+   }
+   &__nameGroup{
+    padding: 10px 0;
+   }
+
+}

@@ -11,7 +11,7 @@ import '../../components/style/style.scss'
 const page=()=>{
     return (
         <div>
-            <NavBarMenu/>
+            {/* <NavBarMenu/> */}
             <TitlePage message={'Mission'}/>
             <Mission/>
             <MissionTable/>

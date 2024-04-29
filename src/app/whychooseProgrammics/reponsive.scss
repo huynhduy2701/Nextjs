@@ -1,5 +1,7 @@
-@media screen and (min-width:320px) and (max-width:768px) {
-    
+@media only screen and (min-width:320px) and (max-width:768px) {
+    .container{
+        padding: 0 !important;
+    }
     .banner{
 
         &__column{
@@ -11,6 +13,101 @@
         &__icon{
             margin: auto;
         }
+        &__column {
+            justify-content: center;
+        }
+       
+        
+        
+    }
+    .item1 {
+        grid-area: header; /* Đặt vị trí của item1 trong grid */
+    }
+    
+    .item2 {
+        grid-area: body; /* Đặt vị trí của item2 trong grid */
+    }
+    .product{
+        &__contentBox{
+            flex-wrap: wrap;
+        }
+        &__infoProduct{
+            // padding: 0 !important;
+            padding: 80px 42px 60px !important;
+        }
+        &__infoProduct{
+            text-align: center;
+        }
+        &__columnInfo{
+            flex-wrap: wrap;
+        }
+        &__textBox {
+            padding: 0 15px 0 15px !important;
+            text-align: center;
+        }
+        &__columnChartInfo{
+            padding-bottom: 50px !important;
+        }
+    }
+    .product__lineChart > span {
 
+        right: -67px !important;
+
+    }
+    .business__Img{
+        display: none;
+    }
+    .business__boxText > h3 {
+        font-size: 26px !important;
+    }
+    .containerBusiness{
+        padding-top: 41px !important;
+    }
+    .business__wrapBusiness{
+        text-align: center;
+    }
+    .Statistical__column{
+        justify-content: center;
+        text-align: center;
+    }
+    .card__box{
+        margin-bottom: 20px !important;
+    }
+    .card__button > a {
+        padding: 0 20px;
+        height: 50px;
+        border: 1px solid #dadce2;
+        width: 70% !important;
+    }
+    .card__button > a > span::after {
+        content: "" !important;
+      
+    }
+    .card__button > a:hover {
+        background-color: white !important;
+        color: black !important;
+    }
+    .card__button > a:hover > span {
+        padding: 0 !important;
+    }
+
+}
+@media only screen and (min-width:768px) and (max-width:1114px) {
+    .banner__column {
+        justify-content: center;
+        text-align: center;
+    }
+    .banner__icon{
+        margin: auto;
+    }
+    .banner__card{
+        margin-bottom: 20px;
+    }
+    .Statistical__column{
+        text-align: center;
+        justify-content: center;
+    }
+    .card__box{
+        margin-bottom: 20px !important;
     }
 }

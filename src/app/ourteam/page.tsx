@@ -8,7 +8,7 @@ import '../../components/style/style.scss'
 const OurTeam = () => {
   return (
     <div>
-      <NavBarMenu />
+      {/* <NavBarMenu /> */}
       <TitlePage message={"Our Team "} />
       <Blog />
       <BanerHelp />

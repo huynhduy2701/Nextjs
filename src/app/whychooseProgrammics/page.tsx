@@ -12,7 +12,7 @@ import '../navbar/style.scss'
 const ChooseProgammics = ()=>{
     return (
         <div>
-            <NavBarMenu/>
+            {/* <NavBarMenu/> */}
             <TitlePage message={'Why Choose Programmics'} />
             <BannerProgram/>
             <ProgrammicsProducts/>

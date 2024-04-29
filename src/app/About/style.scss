@@ -1,4 +1,4 @@
-.container {
+.containerABout {
     width: 100%; /* Chiều rộng container sẽ tự điều chỉnh để vừa với nội dung */
     max-width: 1200px; /* Đặt chiều rộng tối đa của container */
     margin-left: auto; /* Căn lề trái tự động */
@@ -11,10 +11,10 @@
     min-height: 100%;
     &__wrap{
         padding-top: 88px;
-        padding-bottom: 40px;
+        padding-bottom: 100px;
     }
     &__boxTop {
-        padding-bottom: 30px;
+        padding-bottom: 40px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between; // Đảm bảo các phần tử con nằm cách nhau một cách đều đặn
@@ -117,6 +117,7 @@
         }
     }
     &__boxBottom{
+        padding-top: 30px;
         display: flex;
         flex-wrap: wrap;
     }
@@ -124,4 +125,158 @@
 .businissWeAre__card:hover .businissWeAre__icon > svg,
 .businissWeAre__card:hover .businissWeAre__textBox * {
     color: white; // Chuyển màu chữ và icon sang trắng khi hover
+}
+.teamProgrammic{
+    background-image: url(https://programmics.net/wp-content/uploads/2019/09/img_05.png?id=283);
+    background-position: center;
+    max-width: 100%;
+    min-height: 100%;
+    &__wrap{
+        padding: 100px 0 ;
+    }
+    &__teamProgrammicTop{
+        &>h3{
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.4em;
+            padding-bottom: 9px;
+            margin-bottom: 10px;
+
+        }
+        &>span{
+            width: 30px;
+            height: 3px;
+            background-color: blue;
+            position: absolute;
+        }
+    }
+    &_desc{
+       &>p{
+        font-size: 15px;
+        line-height: 27px;
+        font-weight: 400;
+        color: #424449;
+       }
+    }
+    &__teamProgrammicCenter{
+        width: 40%;
+        margin-top: 45px;
+        margin-bottom: 21px;
+    }
+    &__rowCard{
+        background-color: white;
+        border-radius: 5px;
+        margin-bottom: 10px;
+
+    }
+    &__wrapper{
+        padding: 20px 0 20px 10px;
+        cursor: pointer;
+        &>span{
+            &>h4{
+                // padding: 0px 0 20px 30px;
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 1.3em;
+                &>svg{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    &__contentDesc{
+        font-size: 40px;
+        font-weight: 600;
+    }
+    &__open{
+        display: none;
+        padding: 0 25px 0 27px;
+        &.open{
+            display: block;
+        }
+    }
+}
+
+.serviceAbout{
+    width: 100%;
+    min-height: 100%;
+    background-color: #2b2e4f;
+    &__wrapper{
+        padding: 60px 70px;
+        color: white;
+        text-align: center;
+    }
+    &__icon{
+        display: inline-flex;
+        justify-content: center;
+        &>svg{
+            width: 30px;
+            height: 30px;
+            color: blue;
+        }
+    }
+    &__wrap{
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 20px;
+    }
+    &__titleHead{
+        &>h3{
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+    &__desc{
+        font-size: 15px;
+        line-height: 27px;
+        margin-top: 9px;
+    }
+    &__card{
+        cursor: pointer;
+        box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.15);
+        width: 475px;
+        &:hover{
+            background-color:  rgba(255,255,255,0.05);
+            transition: ease 0.5s;
+        }
+    }
+}
+.btnSF{
+    margin-top: 35px;
+    display: inline-block;
+    padding: 0 25px;
+    background-color: #0154f7;
+    width: 156px;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    &:hover{
+      &>span{
+        padding-left: 10px;
+        transition: padding 0.3s ease;
+      }
+      &>span::after{
+        content: "";
+        opacity: 1;
+       
+      }
+    }
+    &>span{
+        padding-right: 54px;
+        font-size: 15px;
+        font-weight: 600;
+        width: 160px;
+        &::after{
+            content: '\2192';
+            padding-left: 12px;
+        }
+    }
 }

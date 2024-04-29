@@ -3,14 +3,16 @@ import NavBarMenu from "../navbar/navbar"
 import CarouselNav from "@/components/carousel"
 import TitlePage from "@/components/titlepage"
 import Pricing from "./pricing"
-
-const PricingAndPlans =()=>{
+import '../../components/style/style.scss'
+import Faq from "./faq"
+const page =()=>{
     return(
         <div>
-            <NavBarMenu/>
+            {/* <NavBarMenu/> */}
             <TitlePage message={'Pricing And Plans'}/>
             <Pricing/>
+            <Faq/>
         </div>
     )
 }
-export default PricingAndPlans
+export default page

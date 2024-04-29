@@ -7,7 +7,7 @@ import './reponsive.scss'
 const BannerProgram=()=>{
     return (
         <div className='banner'>
-            <div className='container'>
+            <div className='containerWhy'>
                 <div className='banner__wrap'>
                     <div className='banner__column '>
                         <div className='banner__card'>

@@ -1,0 +1,80 @@
+.containerContacts {
+        width: 100%; /* Chiều rộng container sẽ tự điều chỉnh để vừa với nội dung */
+        max-width: 1200px; /* Đặt chiều rộng tối đa của container */
+        margin-left: auto; /* Căn lề trái tự động */
+        margin-right: auto; /* Căn lề phải tự động */
+        padding-left: 15px; /* Thêm padding bên trái */
+        padding-right: 15px; /* Thêm padding bên phải */
+}
+.productDetail{
+    
+    width:100%;
+    &__top{
+        display: flex;
+        justify-content: center;
+    }
+    &__img{
+        padding: 0 25px;
+        &>img{
+            width: 200px;
+            height: 200px;
+        }
+    }
+    &__title{
+        &>h3{
+            font-size: 30px;
+            font-weight: 600;
+            
+        }
+    }
+    &__price{
+        display: flex;
+        &>p{
+            padding: 0 15px 0 0;
+        }
+    }
+    &__button{
+        display: flex;
+        &>input{
+            border-color: grey;
+            width: 20%;
+            border: 1px solid grey;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+    }
+    &__minus{
+        &>span{
+            background-color:#FA8072 ; 
+            padding:0 20px;
+            height: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+    &__plus{
+        &>span{
+            background-color:#4169E1 ; 
+            padding:0 20px;
+            height: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+    &__bottom{
+       margin: 50px 0;
+    }
+    &__buttonSubmit{
+        margin-top: 20px;
+    }
+    &__btnAddToCard{
+        &>span{
+            cursor: pointer;
+            background-color: #339900;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 10px;
+        }
+    }
+}
