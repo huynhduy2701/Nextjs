@@ -80,6 +80,13 @@ nav.absolute {
     }
   }
 
+  .navbarAnimation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: all .3s ease;
+  }
+
 .menu {
     display: flex;
     justify-content: space-around;

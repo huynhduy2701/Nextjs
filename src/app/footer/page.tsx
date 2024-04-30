@@ -7,7 +7,7 @@ import { TiSocialFacebook } from "react-icons/ti";
 import { FaLinkedinIn } from "react-icons/fa";
 import { ImInstagram } from "react-icons/im";
 
-
+import '../../components/style/footer.scss'
 import './style.scss'
 const Footer = () => {
   return (

@@ -19,42 +19,64 @@ import { usePathname } from 'next/navigation'
 import { IoIosArrowDown } from "react-icons/io";
 
 const NavBar = () => {
-//   const pathname = usePathname()
- const [menuOpen,setMenuOpen]=useState(false)
- const [dropAbout, setDropAbout] = useState(false);
- const [dropShop,setDropShop]=useState(false);
-//  const router=useRouter();
-//  const[isHome,setIsHome]=useState(false);
-//  useEffect(()=>{
-//   setIsHome(pathname==="/")
-//  },[pathname])
- const toggleAbout = (e: React.MouseEvent<HTMLAnchorElement>) => {
-   e.preventDefault(); // Ngăn chặn mặc định của liên kết
-   setDropAbout(!dropAbout);
+  //   const pathname = usePathname()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [dropAbout, setDropAbout] = useState(false);
+  const [dropShop, setDropShop] = useState(false);
+  //  const router=useRouter();
+  //  const[isHome,setIsHome]=useState(false);
+  //  useEffect(()=>{
+  //   setIsHome(pathname==="/")
+  //  },[pathname])
+  const toggleAbout = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault(); // Ngăn chặn mặc định của liên kết
+    setDropAbout(!dropAbout);
   };
-  const toggleShop=(e:React.MouseEvent<HTMLAnchorElement>)=>{
+  const toggleShop = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setDropShop(!dropShop)
   }
- const toggleMenu = () => {
-  setMenuOpen(!menuOpen);
-};
-const pathname = usePathname();
-const isHome = pathname === '/';
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const Navbar = () => {
+    useEffect(() => {
+      const handleScroll = () => {
+        const navbar = document.querySelector('.container');
+        if (window.scrollY > 100) {
+          navbar?.classList.add('navbarAnimation');
+        } else {
+          navbar?.classList.remove('navbarAnimation');
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+
+    // ...
+  };
+
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   return (
     <div>
       <nav className={`sidebar ${isHome ? 'absolute' : 'relative'}`}>
-        <div className="container">
+        <div className="container" onChange={NavBar}>
           <div className="menu">
             <div className="menu__left">
               <div className="menu__logo menuNav">
-                {isHome ?(
+                {isHome ? (
 
-                    <Image src={logo} alt="logo"  className="logo1" />
-                ):(
+                  <Image src={logo} alt="logo" className="logo1" />
+                ) : (
 
-                <Image src={logoRes} alt="logo"  className="logo2"/>
+                  <Image src={logoRes} alt="logo" className="logo2" />
                 )}
               </div>
             </div>
@@ -63,38 +85,38 @@ const isHome = pathname === '/';
                 <ul className="menuNav">
                   <li>
                     <Link href={'/'}>
-                    Home
+                      Home
                     </Link>
                   </li>
                   <li className="dropdown">
                     <a href={"/About"} className="navbarABout">
-                        About 
-                       <span  onClick={toggleAbout}>
-                       <IoIosArrowDown/>
-                       </span>
+                      About
+                      <span onClick={toggleAbout}>
+                        <IoIosArrowDown />
+                      </span>
                     </a>
                     {dropAbout && (
-                        <ul className="dropdown-menu">
+                      <ul className="dropdown-menu">
                         <li>
-                            <Link href={'ourteam'}>Our Team</Link>
+                          <Link href={'ourteam'}>Our Team</Link>
                         </li>
                         <li>
-                            <Link href="casestudy">Case Study</Link>
+                          <Link href="casestudy">Case Study</Link>
                         </li>
                         <li>
-                            <Link href="mission">Mission</Link>
+                          <Link href="mission">Mission</Link>
                         </li>
                         <li>
-                            <Link href="whychooseProgrammics">Why choose Programics</Link>
+                          <Link href="whychooseProgrammics">Why choose Programics</Link>
                         </li>
-                        </ul>
+                      </ul>
                     )}
-                    </li>
+                  </li>
 
                   <li>
                     <Link href={"/pricingAndPlans"}>
-                    Pricing And Plans
-                    </Link>  
+                      Pricing And Plans
+                    </Link>
                   </li>
                   <li >
                     <Link href={'/shop'}>
@@ -107,10 +129,10 @@ const isHome = pathname === '/';
                     </Link>
                   </li>
                 </ul>
-                
-                
+
+
               </div>
-              
+
             </div>
             <div className="menu__right menuNav">
               <div className="service">
@@ -147,100 +169,100 @@ const isHome = pathname === '/';
               <div>
                 <Link href={'/Login'}>Đăng nhập</Link>
               </div>
-              
+
             </div>
           </div>
         </div>
       </nav>
-        <div className="HeaderMenu">
-                {/* menu-reponsive */}
-            <div className="menuRespon" style={{ display: "none" }}>
-              <div className="menuMobile">
-                <div className="logoRes">
-                  <Image src={logoRes} alt="logo"/>
-                  </div>
-                  <span className="buttonRes" >
-                    <FaBars onClick={()=>toggleMenu()}/>
-                  </span>
-                </div>
+      <div className="HeaderMenu">
+        {/* menu-reponsive */}
+        <div className="menuRespon" style={{ display: "none" }}>
+          <div className="menuMobile">
+            <div className="logoRes">
+              <Image src={logoRes} alt="logo" />
             </div>
-            {/* menu-lefl-reponsive */}
-            <div className={` ${menuOpen ? 'header__mobile-open' : ''}`}>
-            {menuOpen && (
-                <div className="menu__box header__mobile">
-                    <div className="menu__boxLogo">
-                        <Link href="#">
-                            <Image src={logoRes} alt="logo" />
-                        </Link>
-                    </div>
-                    <hr />
-                    <div className="main__menu">
-                        <ul className="menu__main__2">
-                            <li>
-                                <Link href="/">
-                                    Home
-                                </Link>
-                            </li>
-                            <li className="aboutmenu">
-                              <Link href="#"  >
-                                  About
-                                  <span  onClick={toggleAbout}>
-                            <IoIosArrowDown/>
-                       </span>
-                              </Link>
-                              <ul className={`submenu__reponsive ${dropAbout ? 'submenu__reponsive-show' : ''}`}>
-                                  <li>
-                                      <Link href={'/ourteam'}>Our Team</Link>
-                                  </li>
-                                  <li>
-                                      <Link href={'/casestudy'}>Case Study</Link>
-                                  </li>
-                                  <li>
-                                      <Link href={'/mission'}>Mission</Link>
-                                  </li>
-                                  <li>
-                                      <Link href="whychooseProgrammics">Why Choose Programmics</Link>
-                                  </li>
-                              </ul>
-                          </li>
-                            <li>
-                                <Link href="#">
-                                    Pricing And Plans
-                                </Link>
-                            </li>
-                            <li className="btnShop">
-                                <Link href="#"  >
-                                    Shop 
-                                    <span  onClick={toggleShop}>
-                                <IoIosArrowDown/>
-                                </span>
-                                </Link>
-                                <ul className={`submenu__shop ${dropShop ? 'submenu__shop-show' :""  }`}>
-                                   <li>Cart</li>
-                                </ul>
-                            </li>
-                            <li>
-                              <Link href="/">Cart</Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="menu__boxSearch">
-                        <div className="searchForm">
-                            <input type="text" placeholder="Search..." />
-                            <button className="btnIconForm">
-                                <IoIosSearch />
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
-           </div>
+            <span className="buttonRes" >
+              <FaBars onClick={() => toggleMenu()} />
+            </span>
+          </div>
         </div>
+        {/* menu-lefl-reponsive */}
+        <div className={` ${menuOpen ? 'header__mobile-open' : ''}`}>
+          {menuOpen && (
+            <div className="menu__box header__mobile">
+              <div className="menu__boxLogo">
+                <Link href="#">
+                  <Image src={logoRes} alt="logo" />
+                </Link>
+              </div>
+              <hr />
+              <div className="main__menu">
+                <ul className="menu__main__2">
+                  <li>
+                    <Link href="/">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="aboutmenu">
+                    <Link href="#"  >
+                      About
+                      <span onClick={toggleAbout}>
+                        <IoIosArrowDown />
+                      </span>
+                    </Link>
+                    <ul className={`submenu__reponsive ${dropAbout ? 'submenu__reponsive-show' : ''}`}>
+                      <li>
+                        <Link href={'/ourteam'}>Our Team</Link>
+                      </li>
+                      <li>
+                        <Link href={'/casestudy'}>Case Study</Link>
+                      </li>
+                      <li>
+                        <Link href={'/mission'}>Mission</Link>
+                      </li>
+                      <li>
+                        <Link href="whychooseProgrammics">Why Choose Programmics</Link>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <Link href="#">
+                      Pricing And Plans
+                    </Link>
+                  </li>
+                  <li className="btnShop">
+                    <Link href="#"  >
+                      Shop
+                      <span onClick={toggleShop}>
+                        <IoIosArrowDown />
+                      </span>
+                    </Link>
+                    <ul className={`submenu__shop ${dropShop ? 'submenu__shop-show' : ""}`}>
+                      <li>Cart</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <Link href="/">Cart</Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="menu__boxSearch">
+                <div className="searchForm">
+                  <input type="text" placeholder="Search..." />
+                  <button className="btnIconForm">
+                    <IoIosSearch />
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
 
-     
 
 
-     
+
+
     </div>
   );
 };

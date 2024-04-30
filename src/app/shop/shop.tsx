@@ -12,7 +12,7 @@ const Shop=()=>{
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:4000/product');
+                const response = await fetch('http://localhost:3001/product');
                 const data = await response.json();
                 setProducts(data);
                 console.log(data);

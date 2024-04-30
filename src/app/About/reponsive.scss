@@ -1,0 +1,52 @@
+@media screen and (min-width:320px) and (max-width : 768px){
+    .businissWeAre__boxBottom {
+        justify-content: center;
+    }
+    .businissWeAre__column {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .businissWeAre__contentText{
+        text-align: center;
+    }
+    .businissWeAre__boxText{
+        width: 100% !important;
+        margin-top: 30px;
+    }
+    .businissWeAre__boxText > p {
+        padding: 8px 10px !important;
+       margin: auto;
+       text-align: center;
+    }
+    .teamProgrammic__teamProgrammicCenter {
+        width: 100% !important;
+    }
+    .serviceAbout__card {
+       
+        width: 100% !important;
+    }
+}
+@media screen and (min-width :769px) and (max-width :1114px){
+
+    .businissWeAre__img {
+    width: 100% !important;
+    }
+    .serviceAbout__wrap {
+        justify-content: center !important;
+    }
+    .businissWeAre__boxBottom {
+        justify-content: center;
+    }
+    .businissWeAre__column {
+      margin-bottom: 20px;
+    }
+    .businissWeAre__boxText {
+        width: 100% !important;
+        text-align: center;
+        margin-top: 30px;
+    }
+    .businissWeAre__boxText > p {
+        width: 26% !important;
+        margin: auto;
+    }
+}

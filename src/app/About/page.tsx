@@ -7,6 +7,7 @@ import TeamProgrammic from "./teamProgrammic"
 import ServiceAbout from "./serviceAbout"
 import RaipurHelp from "@/components/raipurHelp"
 import '../../components/style/RaipurHelp.scss'
+import './reponsive.scss'
 const page=()=>{
     return (
         <div>

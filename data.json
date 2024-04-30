@@ -1,40 +1,6 @@
 {
   "users": [
     {
-      "id": "b5a6",
-      "username": "",
-      "password": ""
-    },
-    {
-      "id": "3faa",
-      "email": "duy",
-      "username": "duy",
-      "password": "duy"
-    },
-    {
-      "id": "564e",
-      "username": "d",
-      "password": "d"
-    },
-    {
-      "id": "c00c",
-      "email": "duy",
-      "username": "duy",
-      "password": "duy"
-    },
-    {
-      "id": "3b5c",
-      "email": "duy1",
-      "username": "duy1",
-      "password": "duy"
-    },
-    {
-      "id": "4ff0",
-      "email": "a",
-      "username": "a",
-      "password": "a"
-    },
-    {
       "id": "09a3",
       "email": "duy@gmail.com",
       "lastName": "duy",
@@ -80,6 +46,11 @@
       "lastName": "duyyy",
       "firstName": "huuynh",
       "phone": "0325096130",
+      "password": "27012004"
+    },
+    {
+      "id": "a689",
+      "email": "duy@gmail.com",
       "password": "27012004"
     }
   ],
