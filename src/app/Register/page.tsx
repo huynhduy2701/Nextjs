@@ -8,6 +8,7 @@ import { ToastContainer } from "react-toastify";
 // import { useRouter } from "next/router";
 import { redirect, useRouter } from 'next/navigation'
 import { message } from "antd";
+import TitlePage from "@/components/titlepage";
 interface UserData {
     firstName: string;
     lastName: string;
@@ -203,8 +204,11 @@ const Register = () => {
             newListUser.push(user);
             localStorage.setItem('listUser', JSON.stringify(newListUser));
             console.log("đăng kí thành công :", user);
-            showSuccessToast("Đăng kí thành công")
-            router.push('/Login')
+            showSuccessToast("Đăng kí thành công");
+            setTimeout(() => {
+              
+                router.push('/Login', { scroll: false });
+            }, 2000);
         } else {
             // Nếu danh sách người dùng rỗng, thêm người dùng mới vào danh sách
             // và lưu danh sách mới vào localStorage
@@ -219,7 +223,7 @@ const Register = () => {
             localStorage.setItem('listUser', JSON.stringify(newListUser));
             console.log("đăng kí thành công :", user);
             showSuccessToast("Đăng kí thành công")
-            router.push('/Login')
+            // router.push('/Login')
 
         }
 
@@ -240,7 +244,7 @@ const Register = () => {
                 pauseOnHover
                 theme="light"
             />
-            <CarouselNav />
+            <TitlePage message={"register"}/>
             <div className="containerLogin">
                 <div className='formLogin'>
                     <div className='cardLogin'>

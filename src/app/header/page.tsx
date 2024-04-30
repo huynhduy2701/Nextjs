@@ -14,20 +14,31 @@ import { useEffect, useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosSearch } from "react-icons/io";
 // import './style/reponsive.scss'
-import { useRouter } from "next/router";
 import { usePathname } from 'next/navigation'
 import { IoIosArrowDown } from "react-icons/io";
+import { redirect, useRouter } from 'next/navigation'
+import { showErrorToast, showSuccessToast } from "../erros/erros";
+import { ToastContainer } from "react-toastify";
+interface User {
+  firstName: string;
 
+}
 const NavBar = () => {
+  const router = useRouter()
   //   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [dropAbout, setDropAbout] = useState(false);
   const [dropShop, setDropShop] = useState(false);
+  const [isLogin,setIsLogin]=useState(false);
+  const [firstName, setFirstName] = useState('');
+  const checkIsLogin= localStorage.getItem('token')
+
   //  const router=useRouter();
   //  const[isHome,setIsHome]=useState(false);
   //  useEffect(()=>{
   //   setIsHome(pathname==="/")
   //  },[pathname])
+
   const toggleAbout = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault(); // Ngăn chặn mặc định của liên kết
     setDropAbout(!dropAbout);
@@ -40,8 +51,35 @@ const NavBar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  useEffect(()=>{
+    if (checkIsLogin) {
+      setIsLogin(true);
+      // Nếu người dùng đã đăng nhập, lấy thông tin người dùng
+      const userData = localStorage.getItem('listUser');
+      if (userData) {
+        // Phân tích chuỗi JSON để lấy mảng các đối tượng người dùng
+        const userList = JSON.parse(userData);
+        // Giả sử bạn muốn lấy thông tin từ người dùng đầu tiên trong danh sách
+        if (userList.length > 0) {
+          // Truy cập vào thuộc tính firstName của người dùng đầu tiên
+          const { firstName } = userList[0];
+          setFirstName(firstName);
+          console.log(firstName);
+        }
+      }
+    }
+  },[])
+  const handleLogut=()=>{
+    localStorage.removeItem('token');
+    setIsLogin(false);
+    showSuccessToast("Đămg Xuất Thành Công")
+    setTimeout(() => {
+      router.push('/Login', { scroll: false });
+  }, 2000);
+  }
   const Navbar = () => {
     useEffect(() => {
+
       const handleScroll = () => {
         const navbar = document.querySelector('.container');
         if (window.scrollY > 100) {
@@ -166,8 +204,23 @@ const NavBar = () => {
                   </div>
                 </div>
               </div>
+
+              <div className="isLoginOrSignup">
+                {
+                  isLogin ? (
+                    <Link href={"#"} onClick={handleLogut}>đăng xuất</Link>
+
+                  ):(
+
+                    <Link href={'/Login'}>Đăng nhập</Link>
+                  )
+                }
+              </div>
               <div>
-                <Link href={'/Login'}>Đăng nhập</Link>
+                  <span className="nameUser">
+                  {/* lấy ra firstName khi đăng nhập  ở đây*/}
+                  <span>{firstName}</span>
+                  </span>
               </div>
 
             </div>
@@ -244,6 +297,17 @@ const NavBar = () => {
                   <li>
                     <Link href="/">Cart</Link>
                   </li>
+                  <li>
+                  {
+                  isLogin ? (
+                    <Link href={"#"} onClick={handleLogut}>đăng xuất</Link>
+
+                  ):(
+
+                    <Link href={'/Login'}>Đăng nhập</Link>
+                  )
+                }
+                  </li>
                 </ul>
               </div>
               <div className="menu__boxSearch">
@@ -261,7 +325,18 @@ const NavBar = () => {
 
 
 
-
+      <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
 
     </div>
   );

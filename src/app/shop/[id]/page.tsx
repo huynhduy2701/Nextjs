@@ -4,13 +4,28 @@ import './style.scss'
 import img from '../../../../public/assets/imgUser.png'
 import Image from 'next/image'
 import { Product } from "@/app/product"
+import { showSuccessToast } from "@/app/erros/erros"
+import { redirect, useRouter } from 'next/navigation'
+import { ToastContainer } from "react-toastify"
 export default function Page({ params }: { params: { id: number } }) {
   const [products, setProducts] = useState<Product>();
   const [isLoading, setIsLoading] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
+  const checkIsLoginUser= localStorage.getItem('token')
   const url =`http://localhost:4000/product/${params.id}`
+  const router = useRouter()
 console.log(url);
 console.log("aaa",products);
   useEffect(() => {
+    if (checkIsLoginUser) {
+      setIsLogin(true)
+    }else{
+      showSuccessToast("Chưa đăng nhập")  
+      router.push('/Login', { scroll: false });
+      // setTimeout(() => {
+      // }, 500);
+      console.log("chưa đăng nhập");
+    }
     const fetchProdutcDetail = async () => {
       try {
         const res = await fetch("http://localhost:3001/product/"+params.id)
@@ -28,7 +43,20 @@ console.log("aaa",products);
     fetchProdutcDetail();
   },[params.id]);
   return (
+    
     <div className="productDetail">
+        <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
       <div className="container">
         {products && (
           <div className="productDetail__wrap">
