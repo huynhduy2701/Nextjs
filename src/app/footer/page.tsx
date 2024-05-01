@@ -18,10 +18,10 @@ const Footer = () => {
             <div className="wrapper__top">
               <div className="content">
                 <div className="content__left">
-                  <div className="content__img">
+                  <div className="content__img item1">
                     <Image src={logo} alt="logo" />
                   </div>
-                  <div className="textModule">
+                  <div className="textModule item2">
                     <div className="textModule__designInfo">
                       <div className="textModule__info">
                         <h3>Programmics</h3>
@@ -33,7 +33,7 @@ const Footer = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="content__service">
+                  <div className="content__service item3">
                     <Link href={"#"}>
                       <span>Cloud Services</span>
                     </Link>

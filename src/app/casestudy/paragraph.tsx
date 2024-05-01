@@ -9,7 +9,7 @@ const Paragraph =()=>{
                         <div className="paragraph_title">
                             <p>
                                 <strong>
-                                paragraph
+                                Challenges
                                 </strong>
                             </p>
                         </div>
@@ -20,7 +20,7 @@ const Paragraph =()=>{
                             </p>
                         </div>
                     </div>
-                    <div className="paragraph_textBox">
+                    <div className="paragraph_textBoxBottom">
                         <div className="paragraph_title">
                             <p>
                                 <strong>

@@ -25,6 +25,24 @@
        
         width: 100% !important;
     }
+    .businissWeAre__icon {
+
+        margin: auto;
+    }
+    .businissWeAre__card {
+        padding: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .businissWeAre__column:hover {
+        background-color: white; 
+
+      }
+    .businissWeAre__card:hover .businissWeAre__icon > svg,
+.businissWeAre__card:hover .businissWeAre__textBox * {
+    color: black; // Chuyển màu chữ và icon sang trắng khi hover
+}
 }
 @media screen and (min-width :769px) and (max-width :1114px){
 

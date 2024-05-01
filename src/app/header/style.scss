@@ -58,6 +58,47 @@ nav {
     width: 100%;
     min-height: 100%;
     // position: sticky;
+    &.not-home {
+        position: relative;
+        background-color: transparent; // Đặt màu nền trong suốt
+    
+        .menu__content {
+          & > ul {
+            & > li {
+              color: black; // Đặt màu chữ thành đen
+    
+              &:hover {
+                &::after {
+                  background-color: #3b7eff; // Đặt màu đường gạch dưới thành đen
+                }
+              }
+            }
+          }
+        }
+    
+        .service {
+          &__question {
+            & > h3 {
+              color: black; // Đặt màu chữ thành đen
+            }
+          }
+    
+          &__number {
+            color: black; // Đặt màu chữ thành đen
+          }
+        }
+    
+        .search {
+          &__customicon {
+            color: black; // Đặt màu icon thành đen
+          }
+        }
+    
+        .isLoginOrSignup,
+        .nameUser {
+          color: black; // Đặt màu chữ thành đen
+        }
+      }
 }
 nav.absolute {
     position: absolute !important; /* Đối với trang home (`/`) */
@@ -80,12 +121,34 @@ nav.absolute {
     }
   }
 
-  .navbarAnimation {
-    position: fixed;
-    top: 0;
-    width: 100%;
+.navbarAnimation {
+display: block;
+position: fixed;
+top: 0;
+width: 100%;
+animation: scroll .5s ease-in-out 1;
+z-index: 1000;
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hidden-menu {
+    display: none;
+    transition: all .5s ease-in-out;
+}
+
+.menuRespon {
+    display: none;
     transition: all .3s ease;
-  }
+}
 
 .menu {
     display: flex;

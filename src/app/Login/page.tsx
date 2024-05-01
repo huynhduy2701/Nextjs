@@ -154,9 +154,9 @@ const Login = () => {
                                     <button className='' onClick={handleLogin}>Login</button>
                                 </div>
                                 <br />
-                                <Link href={'/Register'}>
+                                <a href={'/Register'}>
                                     chưa có tài khoản
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </div>

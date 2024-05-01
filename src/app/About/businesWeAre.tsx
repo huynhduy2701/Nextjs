@@ -24,9 +24,9 @@ const BusinissWeAre=()=>{
                                      software technology and provide quality assurance services. 
                                     </p>
                                 </div>
-                                <Link href={'/'}>
+                                <a href={'/'}>
                                     <span>Read More</span>
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </div>

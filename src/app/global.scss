@@ -30,9 +30,6 @@
     top: 5%;
 }
 @media (min-width:320px) and (max-width:767px) {
-    .card__button > a {
-        width: 80% !important;
-    }
     .Blog__blogCard:hover {
         transform: translateY(0px) !important;
     }
@@ -281,10 +278,15 @@
     }
     .wrapper {
         padding: 0 !important;
+        // margin-top: 80px !important;
     }
     .content__left {
         display: flex;
         flex-wrap: wrap;
+        padding-top: 80px;
+    }
+    .textModule__info,.textModule__title{
+        width: 100% !important;
     }
 }
 @media (min-width:768px) and (max-width:1001px) {

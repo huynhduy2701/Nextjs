@@ -10,7 +10,7 @@ import img2 from "../../public/assets/imgpeople.png";
 import img1 from "../../public/assets/cungtay.png";
 import { FaBars } from "react-icons/fa6";
 import logoRes from "../../../public/assets/Programmics-1-removebg-preview.png"
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosSearch } from "react-icons/io";
 // import './style/reponsive.scss'
@@ -19,112 +19,111 @@ import { IoIosArrowDown } from "react-icons/io";
 import { redirect, useRouter } from 'next/navigation'
 import { showErrorToast, showSuccessToast } from "../erros/erros";
 import { ToastContainer } from "react-toastify";
+import './nav'
 interface User {
   firstName: string;
 
 }
 const NavBar = () => {
-  const router = useRouter()
-  //   const pathname = usePathname()
-  const [menuOpen, setMenuOpen] = useState(false)
+  const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
   const [dropAbout, setDropAbout] = useState(false);
   const [dropShop, setDropShop] = useState(false);
-  const [isLogin,setIsLogin]=useState(false);
+  const [isLogin, setIsLogin] = useState(false);
   const [firstName, setFirstName] = useState('');
-  const checkIsLogin= localStorage.getItem('token')
+  const checkIsLogin = localStorage.getItem('token');
+  const [isScrolled, setIsScrolled] = useState(false);
+  const navRef = useRef(null);
 
-  //  const router=useRouter();
-  //  const[isHome,setIsHome]=useState(false);
-  //  useEffect(()=>{
-  //   setIsHome(pathname==="/")
-  //  },[pathname])
-
-  const toggleAbout = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault(); // Ngăn chặn mặc định của liên kết
-    setDropAbout(!dropAbout);
-  };
-  const toggleShop = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    setDropShop(!dropShop)
-  }
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  useEffect(()=>{
+  useEffect(() => {
     if (checkIsLogin) {
       setIsLogin(true);
-      // Nếu người dùng đã đăng nhập, lấy thông tin người dùng
       const userData = localStorage.getItem('listUser');
       if (userData) {
-        // Phân tích chuỗi JSON để lấy mảng các đối tượng người dùng
         const userList = JSON.parse(userData);
-        // Giả sử bạn muốn lấy thông tin từ người dùng đầu tiên trong danh sách
         if (userList.length > 0) {
-          // Truy cập vào thuộc tính firstName của người dùng đầu tiên
           const { firstName } = userList[0];
           setFirstName(firstName);
-          console.log(firstName);
         }
       }
     }
-  },[])
-  const handleLogut=()=>{
-    localStorage.removeItem('token');
-    setIsLogin(false);
-    showSuccessToast("Đămg Xuất Thành Công")
-    setTimeout(() => {
-      router.push('/Login', { scroll: false });
-  }, 2000);
-  }
-  const Navbar = () => {
-    useEffect(() => {
+  }, []);
 
-      const handleScroll = () => {
-        const navbar = document.querySelector('.container');
-        if (window.scrollY > 100) {
-          navbar?.classList.add('navbarAnimation');
-        } else {
-          navbar?.classList.remove('navbarAnimation');
-        }
-      };
-
-      window.addEventListener('scroll', handleScroll);
-
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
-
-    // ...
-  };
 
   const pathname = usePathname();
   const isHome = pathname === '/';
 
+  const toggleAbout = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setDropAbout(!dropAbout);
+  };
+
+  const toggleShop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setDropShop(!dropShop);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  // const handleLogout = () => {
+  //   localStorage.removeItem('token');
+  //   setIsLogin(false);
+  //   setTimeout(() => {
+  //     router.push('/Login', { scroll: false });
+  //   }, 2000);
+  // };
+
+  const scrollPosition = window.scrollY;
+  const navbar = document.querySelector('nav');
+
+  if (navbar) {
+    if (scrollPosition > 200) {
+      navbar.classList.remove('absolute');
+      navbar.classList.add('active');
+    } else {
+      navbar.classList.remove('active');
+      if (isHome) {
+        navbar.classList.add('absolute');
+      } else {
+        navbar.classList.remove('absolute');
+      }
+    }
+  }
+
+
+
+  const handleLogut = () => {
+    localStorage.removeItem('token');
+    setIsLogin(false);
+    showSuccessToast("Đăng Xuất Thành Công")
+    setTimeout(() => {
+      router.push('/Login', { scroll: false });
+    }, 2000);
+  }
+
   return (
     <div>
-      <nav className={`sidebar ${isHome ? 'absolute' : 'relative'}`}>
-        <div className="container" onChange={NavBar}>
+     {isHome ? (
+        <nav className={`sidebar`} >
+      {/* <nav className={`sidebar ${isHome ? 'absolute' : 'relative'}`}> */}
+        <div className="container">
           <div className="menu">
             <div className="menu__left">
               <div className="menu__logo menuNav">
-                {isHome ? (
-
+                
                   <Image src={logo} alt="logo" className="logo1" />
-                ) : (
-
-                  <Image src={logoRes} alt="logo" className="logo2" />
-                )}
+                
               </div>
             </div>
             <div className="menu__center">
               <div className="menu__content">
                 <ul className="menuNav">
                   <li>
-                    <Link href={'/'}>
+                    <a href={'/'}>
                       Home
-                    </Link>
+                    </a>
                   </li>
                   <li className="dropdown">
                     <a href={"/About"} className="navbarABout">
@@ -136,35 +135,35 @@ const NavBar = () => {
                     {dropAbout && (
                       <ul className="dropdown-menu">
                         <li>
-                          <Link href={'ourteam'}>Our Team</Link>
+                          <a href="/ourteam">Our Team</a>
                         </li>
                         <li>
-                          <Link href="casestudy">Case Study</Link>
+                          <a href="casestudy">Case Study</a>
                         </li>
                         <li>
-                          <Link href="mission">Mission</Link>
+                          <a href="mission">Mission</a>
                         </li>
                         <li>
-                          <Link href="whychooseProgrammics">Why choose Programics</Link>
+                          <a href="whychooseProgrammics">Why choose Programics</a>
                         </li>
                       </ul>
                     )}
                   </li>
 
                   <li>
-                    <Link href={"/pricingAndPlans"}>
+                    <a href={"/pricingAndPlans"}>
                       Pricing And Plans
-                    </Link>
+                    </a>
                   </li>
                   <li >
-                    <Link href={'/shop'}>
+                    <a href={'/shop'}>
                       Shop
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link href={'/contact'}>
+                    <a href={'/contact'}>
                       Contacts
-                    </Link>
+                    </a>
                   </li>
                 </ul>
 
@@ -174,7 +173,7 @@ const NavBar = () => {
             </div>
             <div className="menu__right menuNav">
               <div className="service">
-                <Link href={"/"}>
+                <a href={"/"}>
                   <div className="service__icon">
                     <RiWhatsappFill
                       className="service__iconSize"
@@ -192,7 +191,7 @@ const NavBar = () => {
                       <p>+919859092222</p>
                     </div>
                   </div>
-                </Link>
+                </a>
               </div>
               <div className="search">
                 <div className="search__column">
@@ -208,28 +207,156 @@ const NavBar = () => {
               <div className="isLoginOrSignup">
                 {
                   isLogin ? (
-                    <Link href={"#"} onClick={handleLogut}>đăng xuất</Link>
+                    <a href={"#"} onClick={handleLogut}>đăng xuất</a>
 
-                  ):(
+                  ) : (
 
-                    <Link href={'/Login'}>Đăng nhập</Link>
+                    <a href={'/Login'}>Đăng nhập</a>
                   )
                 }
               </div>
               <div>
-                  <span className="nameUser">
+                <span className="nameUser">
                   {/* lấy ra firstName khi đăng nhập  ở đây*/}
                   <span>{firstName}</span>
-                  </span>
+                </span>
               </div>
 
             </div>
           </div>
         </div>
       </nav>
+      ):(
+
+        <nav className={`sidebarTwo not-home`} ref={navRef}>
+      {/* <nav className={`sidebar ${isHome ? 'absolute' : 'relative'}`}> */}
+        <div className="container">
+          <div className="menu">
+            <div className="menu__left">
+              <div className="menu__logo menuNav">
+              
+
+               
+
+                  <Image src={logoRes} alt="logo" className="logo2" />
+              
+              </div>
+            </div>
+            <div className="menu__center">
+              <div className="menu__content">
+                <ul className="menuNav">
+                  <li>
+                    <a href={'/'}>
+                      Home
+                    </a>
+                  </li>
+                  <li className="dropdown">
+                    <a href={"/About"} className="navbarABout">
+                      About
+                      <span onClick={toggleAbout}>
+                        <IoIosArrowDown />
+                      </span>
+                    </a>
+                    {dropAbout && (
+                      <ul className="dropdown-menu">
+                        <li>
+                          <a href="/ourteam">Our Team</a>
+                        </li>
+                        <li>
+                          <a href="casestudy">Case Study</a>
+                        </li>
+                        <li>
+                          <a href="mission">Mission</a>
+                        </li>
+                        <li>
+                          <a href="whychooseProgrammics">Why choose Programics</a>
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+
+                  <li>
+                    <a href={"/pricingAndPlans"}>
+                      Pricing And Plans
+                    </a>
+                  </li>
+                  <li >
+                    <a href={'/shop'}>
+                      Shop
+                    </a>
+                  </li>
+                  <li>
+                    <a href={'/contact'}>
+                      Contacts
+                    </a>
+                  </li>
+                </ul>
+
+
+              </div>
+
+            </div>
+            <div className="menu__right menuNav">
+              <div className="service">
+                <a href={"/"}>
+                  <div className="service__icon">
+                    <RiWhatsappFill
+                      className="service__iconSize"
+                      style={{
+                        width: "30px",
+                        height: "30px",
+                        color: "#3b7eff",
+                      }}
+                    />{" "}
+                    {/* Chỉnh sửa class của icon */}
+                  </div>
+                  <div className="service__question">
+                    <h3>Have Any Questions?</h3>
+                    <div className="service__number">
+                      <p>+919859092222</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div className="search">
+                <div className="search__column">
+                  <div className="search__icon">
+                    <CiSearch
+                      className="search__customicon"
+                      style={{ width: "26px", height: "33px", color: "white" }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="isLoginOrSignup">
+                {
+                  isLogin ? (
+                    <a href={"#"} onClick={handleLogut}>đăng xuất</a>
+
+                  ) : (
+
+                    <a href={'/Login'}>Đăng nhập</a>
+                  )
+                }
+              </div>
+              <div>
+                <span className="nameUser">
+                  {/* lấy ra firstName khi đăng nhập  ở đây*/}
+                  <span>{firstName}</span>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </nav>
+      )}
+
+
       <div className="HeaderMenu">
         {/* menu-reponsive */}
-        <div className="menuRespon" style={{ display: "none" }}>
+        <div className="menuRespon">
           <div className="menuMobile">
             <div className="logoRes">
               <Image src={logoRes} alt="logo" />
@@ -240,73 +367,73 @@ const NavBar = () => {
           </div>
         </div>
         {/* menu-lefl-reponsive */}
-        <div className={` ${menuOpen ? 'header__mobile-open' : ''}`}>
-          {menuOpen && (
+        <div className={`${menuOpen ? 'header__mobile-open' : ''}`}>
+  {menuOpen && (
             <div className="menu__box header__mobile">
               <div className="menu__boxLogo">
-                <Link href="#">
+                <a href="#">
                   <Image src={logoRes} alt="logo" />
-                </Link>
+                </a>
               </div>
               <hr />
               <div className="main__menu">
                 <ul className="menu__main__2">
                   <li>
-                    <Link href="/">
+                    <a href="/">
                       Home
-                    </Link>
+                    </a>
                   </li>
                   <li className="aboutmenu">
-                    <Link href="#"  >
+                    <a href="About"  >
                       About
                       <span onClick={toggleAbout}>
                         <IoIosArrowDown />
                       </span>
-                    </Link>
+                    </a>
                     <ul className={`submenu__reponsive ${dropAbout ? 'submenu__reponsive-show' : ''}`}>
                       <li>
-                        <Link href={'/ourteam'}>Our Team</Link>
+                        <a href="ourteam">Our Team</a>
                       </li>
                       <li>
-                        <Link href={'/casestudy'}>Case Study</Link>
+                        <a href={'/casestudy'}>Case Study</a>
                       </li>
                       <li>
-                        <Link href={'/mission'}>Mission</Link>
+                        <a href={'/mission'}>Mission</a>
                       </li>
                       <li>
-                        <Link href="whychooseProgrammics">Why Choose Programmics</Link>
+                        <a href="whychooseProgrammics">Why Choose Programmics</a>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    <Link href="#">
+                    <a href="pricingAndPlans">
                       Pricing And Plans
-                    </Link>
+                    </a>
                   </li>
                   <li className="btnShop">
-                    <Link href="#"  >
+                    <a href="shop"  >
                       Shop
                       <span onClick={toggleShop}>
                         <IoIosArrowDown />
                       </span>
-                    </Link>
+                    </a>
                     <ul className={`submenu__shop ${dropShop ? 'submenu__shop-show' : ""}`}>
                       <li>Cart</li>
                     </ul>
                   </li>
                   <li>
-                    <Link href="/">Cart</Link>
+                    <a href="/">Cart</a>
                   </li>
                   <li>
-                  {
-                  isLogin ? (
-                    <Link href={"#"} onClick={handleLogut}>đăng xuất</Link>
+                    {
+                      isLogin ? (
+                        <a href={"#"} onClick={handleLogut}>đăng xuất</a>
 
-                  ):(
+                      ) : (
 
-                    <Link href={'/Login'}>Đăng nhập</Link>
-                  )
-                }
+                        <a href={'/Login'}>Đăng nhập</a>
+                      )
+                    }
                   </li>
                 </ul>
               </div>
@@ -326,17 +453,17 @@ const NavBar = () => {
 
 
       <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-            />
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
 
     </div>
   );

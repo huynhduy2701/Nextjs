@@ -9,7 +9,7 @@ const TitlePage = (props: any) => {
                     <h1>
                         {props.message}
                     </h1>
-                    <p><Link href={'/'}>Home</Link> {'>'} {props.message} </p>
+                    <p><a href={'/'}>Home</a> {'>'} {props.message} </p>
                 </div>
             </div>
         </div>

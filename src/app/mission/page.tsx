@@ -8,6 +8,7 @@ import FooTer from "@/components/footer"
 import Banner from "./missionBanner"
 import './reponsive.scss'
 import '../../components/style/style.scss'
+import '../footer/style.scss'
 const page=()=>{
     return (
         <div>
